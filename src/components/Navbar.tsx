@@ -51,7 +51,7 @@ export default function Navbar() {
               />
             </a>
             <div className={`h-10 md:h-12 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
-            <div className="flex flex-col justify-center space-y-0.5 z-50">
+            <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5 z-50">
               <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-deepblue'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 STARBOARD
               </span>
