@@ -10,6 +10,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
+import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 import ImageAnimator from "@/components/ImageAnimator";
 import Head from "next/head";
@@ -34,6 +35,7 @@ export default function Home() {
       <TestimonialsSection />
       <FaqSection />
       <ContactSection />
+      <MapSection />
       <Footer />
     </main>
   );
