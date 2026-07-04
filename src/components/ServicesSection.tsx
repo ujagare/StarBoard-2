@@ -37,7 +37,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-deepblue text-white overflow-hidden">
+    <section id="services" ref={sectionRef} className="py-24 bg-deepblue text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -84,7 +84,7 @@ export default function ServicesSection() {
             </div>
 
             <div className="pt-6">
-              <a href="#" className="inline-block border border-gold text-gold px-8 py-3 uppercase tracking-widest text-sm font-semibold hover:bg-gold hover:text-deepblue transition-colors">
+              <a href="#contact" className="inline-block border border-gold text-gold px-8 py-3 uppercase tracking-widest text-sm font-semibold hover:bg-gold hover:text-deepblue transition-colors">
                 Explore Services
               </a>
             </div>

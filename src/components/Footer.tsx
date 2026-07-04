@@ -50,23 +50,23 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-gold">Services</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Commercial Leasing</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Commercial Sales</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Retail Leasing</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Investment Advisory</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Luxury Residential Sales</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Property Consulting</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Commercial Leasing</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Commercial Sales</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Retail Leasing</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Investment Advisory</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Luxury Residential Sales</a></li>
+              <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Property Consulting</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-serif text-xl mb-6 text-gold">Quick Links</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">About Us</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Founder&apos;s Word</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Why Choose Us</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Key Achievements</a></li>
-              <li><a href="#" className="hover:text-gold hover:pl-2 transition-all">Featured Properties</a></li>
+              <li><a href="#about" className="hover:text-gold hover:pl-2 transition-all">About Us</a></li>
+              <li><a href="#founder" className="hover:text-gold hover:pl-2 transition-all">Founder&apos;s Word</a></li>
+              <li><a href="#why-choose-us" className="hover:text-gold hover:pl-2 transition-all">Why Choose Us</a></li>
+              <li><a href="#achievements" className="hover:text-gold hover:pl-2 transition-all">Key Achievements</a></li>
+              <li><a href="#properties" className="hover:text-gold hover:pl-2 transition-all">Featured Properties</a></li>
             </ul>
           </div>
 

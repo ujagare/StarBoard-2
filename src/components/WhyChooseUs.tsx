@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-24 bg-deepblue text-white overflow-hidden relative">
+    <section id="why-choose-us" ref={containerRef} className="py-24 bg-deepblue text-white overflow-hidden relative">
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -89,7 +89,7 @@ export default function WhyChooseUs() {
         {/* Top Eyebrow Section */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <div className="w-12 h-[1px] bg-gold/50"></div>
-          <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">Our Distinct Advantage</span>
+          <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold whitespace-nowrap">Our Distinct Advantage</span>
           <div className="w-12 h-[1px] bg-gold/50"></div>
         </div>
 

@@ -86,7 +86,7 @@ export default function AchievementsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-deepblue text-white overflow-hidden relative">
+    <section id="achievements" ref={sectionRef} className="py-24 bg-deepblue text-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Label */}

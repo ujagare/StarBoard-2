@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-[#F8F9FA] relative">
+    <section id="testimonials" ref={sectionRef} className="py-24 bg-[#F8F9FA] relative">
       {/* Decorative Gold Accent */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50"></div>
 

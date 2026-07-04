@@ -34,7 +34,7 @@ export default function FounderSection() {
   }, { scope: containerRef });
 
   return (
-    <section className="relative py-12 bg-deepblue text-white overflow-hidden">
+    <section id="founder" className="relative py-12 bg-deepblue text-white overflow-hidden">
       {/* Subtle Background Pattern/Overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold via-transparent to-transparent"></div>
@@ -44,7 +44,7 @@ export default function FounderSection() {
         
         <div className="mb-8 flex flex-col items-center">
           <h2 className="font-serif text-4xl md:text-5xl text-gold mb-4 uppercase tracking-[0.2em]">
-            <AnimatedText text="A Word From The Founder" />
+            <span className="whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="whitespace-nowrap"><AnimatedText text="The Founder" /></span>
           </h2>
           <div className="w-24 h-[1px] bg-gold/50 mx-auto"></div>
         </div>

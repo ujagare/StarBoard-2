@@ -48,7 +48,7 @@ export default function Navbar() {
               />
             </a>
             <div className={`h-10 md:h-12 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
-            <div className="flex flex-col justify-center -space-y-1 z-50">
+            <div className="flex flex-col justify-center space-y-0.5 z-50">
               <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-deepblue'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 STARBOARD
               </span>
@@ -137,16 +137,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Contact Info Footer in Menu */}
+        {/* Social Media Icons Footer in Menu */}
         <div 
-          className={`absolute bottom-8 md:bottom-12 left-0 w-full px-8 md:px-16 flex flex-col md:flex-row justify-between items-start md:items-center text-gray-400 font-light tracking-widest text-[10px] md:text-xs border-t border-white/10 pt-6 transition-all duration-1000 ${
+          className={`absolute bottom-8 md:bottom-12 left-0 w-full px-8 md:px-16 flex justify-center items-center border-t border-white/10 pt-6 transition-all duration-1000 ${
             menuOpen ? 'opacity-100 translate-y-0 delay-700' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="flex flex-col gap-2 items-start mb-6 md:mb-0">
-            <a href="tel:+919769494723" className="hover:text-gold transition-colors">+91 97694 94723</a>
-            <a href="mailto:connect@starboardrealtors.co.in" className="hover:text-gold transition-colors lowercase">connect@starboardrealtors.co.in</a>
-          </div>
           <div className="flex gap-4">
             <a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
               <FaWhatsapp size={18} />

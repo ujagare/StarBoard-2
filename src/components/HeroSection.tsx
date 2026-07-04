@@ -63,11 +63,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <div className="w-[1px] h-16 bg-white/50 mx-auto"></div>
-      </div>
     </section>
   );
 }
