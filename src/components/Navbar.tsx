@@ -7,8 +7,10 @@ import { FaWhatsapp, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -23,6 +25,7 @@ export default function Navbar() {
   return (
     <>
       <nav
+        suppressHydrationWarning
         className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${
           menuOpen 
             ? "bg-transparent border-transparent text-white" 

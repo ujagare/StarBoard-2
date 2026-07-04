@@ -15,16 +15,16 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/Services/ChatGPT Image Jun 25, 2026, 10_56_03 AM.png"
+          src="/images/FEATURED OPPORTUNITIES/ChatGPT Image Jul 4, 2026, 08_40_14 PM.png"
           alt="Luxury Commercial Real Estate"
           fill
           quality={100}
           unoptimized
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
         {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}

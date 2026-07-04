@@ -44,7 +44,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${jost.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden font-sans">
+      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden font-sans" suppressHydrationWarning>
         <SmoothScroll />
         {children}
       </body>
