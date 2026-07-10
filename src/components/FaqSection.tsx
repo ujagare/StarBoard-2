@@ -72,12 +72,13 @@ export default function FaqSection() {
           </p>
         </div>
 
-        <div className="space-y-3 md:space-y-4">
+        <ul className="space-y-3 md:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const answerId = `faq-answer-${index}`;
             
             return (
-              <div 
+              <li 
                 key={index} 
                 className={`faq-item border transition-all duration-500 bg-transparent ${
                   isOpen ? 'border-gold shadow-[0_4px_20px_rgba(197,160,60,0.15)]' : 'border-gold/50 hover:border-gold'
@@ -85,6 +86,8 @@ export default function FaqSection() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
                   className="w-full flex items-center justify-between p-4 sm:p-5 md:p-8 text-left focus:outline-none group"
                 >
                   <h3 className={`font-serif text-base sm:text-lg md:text-xl lg:text-2xl transition-colors duration-300 pr-4 sm:pr-6 md:pr-8 ${
@@ -92,14 +95,14 @@ export default function FaqSection() {
                   }`}>
                     {faq.question}
                   </h3>
-                  <div className={`flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${
-                    isOpen ? 'border-gold bg-gold text-[#0F1C2D] rotate-45' : 'border-white/20 text-white group-hover:border-gold group-hover:text-gold'
+                  <div className={`shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full border flex items-center justify-center transition-all duration-50                    isOpen ? 'border-gold bg-gold text-[#0F1C2D] rotate-45' : 'border-white/20 text-white group-hover:border-gold group-hover:text-gold'
                   }`}>
                     <Plus size={16} className="sm:w-[18px] sm:h-[18px]" strokeWidth={1.5} />
                   </div>
                 </button>
                 
                 <div 
+                  id={answerId}
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
@@ -108,10 +111,10 @@ export default function FaqSection() {
                     {faq.answer}
                   </div>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
         
       </div>
     </section>

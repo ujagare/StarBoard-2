@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
-  const textRef = useRef(null);
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -59,11 +58,11 @@ export default function AboutSection() {
           >
             {/* Premium corporate/office imagery */}
             <Image
-              src="/images/Services/ChatGPT Image Jun 25, 2026, 10_55_09 AM.png"
-              alt="Starboard Realtors Corporate"
+              src="/images/Services/ChatGPT Image Jun 25, 2026, 10_55_09 AM.webp"
+              alt="Starboard Realtors corporate real estate consultation"
               fill
-              quality={100}
-              unoptimized
+              quality={82}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

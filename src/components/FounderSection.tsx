@@ -42,21 +42,21 @@ export default function FounderSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="mb-8 flex flex-col items-center">
+        <header className="mb-8 flex flex-col items-center">
           <h2 className="font-serif text-4xl md:text-5xl text-gold mb-4 uppercase tracking-[0.2em]">
             <span className="whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="whitespace-nowrap"><AnimatedText text="The Founder" /></span>
           </h2>
           <div className="w-24 h-[1px] bg-gold/50 mx-auto"></div>
-        </div>
+        </header>
 
-        <div className="relative">
+        <figure className="relative">
           {/* Giant Quote Mark Background */}
           <div className="absolute -top-10 -left-6 text-[10rem] md:text-[15rem] font-serif text-white/5 select-none leading-none">
             &ldquo;
           </div>
 
           <div ref={containerRef} className="relative z-10 py-2 px-2 md:px-10">
-            <p 
+            <blockquote 
               className="text-center font-serif w-full" 
               style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.1)' }}
             >
@@ -65,17 +65,17 @@ export default function FounderSection() {
                   {word}
                 </span>
               ))}
-            </p>
+            </blockquote>
           </div>
-        </div>
         
-        <div className="mt-10 flex flex-col items-center md:items-end md:pr-10">
+        <figcaption className="mt-10 flex flex-col items-center md:items-end md:pr-10">
           <div className="w-12 h-[2px] bg-gold mb-3"></div>
-          <p className="font-serif text-2xl text-white">Sandesh Rolston</p>
+          <cite className="font-serif text-2xl text-white not-italic">Sandesh Rolston</cite>
           <p className="text-gold font-light tracking-widest uppercase text-xs mt-1">
             Founder & Director
           </p>
-        </div>
+        </figcaption>
+        </figure>
 
       </div>
     </section>

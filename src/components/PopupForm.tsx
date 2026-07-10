@@ -9,7 +9,7 @@ export default function PopupForm() {
   const [isMounted, setIsMounted] = useState(false);
   
   const backdropRef = useRef<HTMLDivElement>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLElement>(null);
 
   // Auto-open after 7 seconds
   useEffect(() => {
@@ -74,8 +74,11 @@ export default function PopupForm() {
       />
       
       {/* Modal Box */}
-      <div 
+      <section 
         ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="popup-form-title"
         className="relative w-full max-w-lg bg-[#0F1C2D] border border-[#CFA85F]/30 rounded-xl shadow-2xl overflow-hidden"
       >
         {/* Close Button */}
@@ -88,12 +91,14 @@ export default function PopupForm() {
 
         {/* Content */}
         <div className="p-8 sm:p-10">
-          <div className="text-center mb-8">
-            <h3 className="font-serif text-3xl md:text-4xl text-white mb-2">Register Interest</h3>
+          <header className="text-center mb-8">
+            <h3 id="popup-form-title" className="font-serif text-3xl md:text-4xl text-white mb-2">Register Interest</h3>
             <p className="text-sm md:text-base text-gray-300">Experience premium living with Starboard Realtors.</p>
-          </div>
+          </header>
 
           <form className="space-y-6 flex flex-col">
+            <fieldset className="space-y-6">
+              <legend className="sr-only">Register your interest</legend>
             <div className="relative group">
               <input 
                 type="text" 
@@ -152,9 +157,10 @@ export default function PopupForm() {
               <span className="relative z-10">Submit Inquiry</span>
               <div className="absolute inset-0 bg-[#CFA85F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
             </button>
+            </fieldset>
           </form>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

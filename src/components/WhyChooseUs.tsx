@@ -108,7 +108,7 @@ export default function WhyChooseUs() {
           {advantages.map((item, index) => {
             const IconComponent = item.icon;
             return (
-              <div 
+              <article 
                 key={index} 
                 className="why-choose-card relative border border-gold/30 bg-[#122032] p-4 md:p-8 rounded-sm transition-all duration-500 shadow-[0_15px_40px_-15px_rgba(207,168,95,0.15)] hover:border-gold hover:bg-[#1a2d47] hover:scale-105 flex flex-col justify-between overflow-hidden group cursor-pointer"
               >
@@ -135,7 +135,7 @@ export default function WhyChooseUs() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

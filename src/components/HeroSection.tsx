@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import gsap from "gsap";
 import Image from "next/image";
 import AnimatedText from "./AnimatedText";
 
@@ -15,13 +14,13 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/FEATURED OPPORTUNITIES/ChatGPT Image Jul 4, 2026, 08_40_14 PM.png"
-          alt="Luxury Commercial Real Estate"
+          src="/images/FEATURED OPPORTUNITIES/ChatGPT Image Jul 4, 2026, 08_40_14 PM.webp"
+          alt="Luxury commercial real estate advisory in Pune"
           fill
-          quality={100}
-          unoptimized
+          quality={85}
           className="object-cover object-top"
-          priority
+          sizes="100vw"
+          preload
         />
         {/* Dark Overlay for text readability */}
         <div className="absolute inset-0 bg-black/60" />

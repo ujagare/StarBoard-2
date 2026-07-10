@@ -12,7 +12,7 @@ export default function Footer() {
             {/* Logo with Text - Same as Navbar */}
             <div className="flex items-center gap-3 cursor-pointer bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-md border border-gray-200 w-fit">
               <Image 
-                src="/images/New logo.png" 
+                src="/images/New logo.webp" 
                 alt="Starboard Realtors Logo" 
                 width={80} 
                 height={80} 
@@ -31,23 +31,25 @@ export default function Footer() {
             <p className="text-gray-400 font-light text-sm max-w-xs leading-relaxed">
               Curating exceptional spaces. A boutique real estate advisory firm specializing in commercial real estate, retail spaces, investment opportunities, and luxury residential properties across Pune.
             </p>
-            <div className="flex gap-4 pt-2">
-              <a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
+            <nav aria-label="Footer social links">
+            <ul className="flex gap-4 pt-2">
+              <li><a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
                 <FaWhatsapp size={20} />
-              </a>
-              <a href="https://www.linkedin.com/company/starboard-realtors/" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
+              </a></li>
+              <li><a href="https://www.linkedin.com/company/starboard-realtors/" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
                 <FaLinkedinIn size={20} />
-              </a>
-              <a href="https://www.instagram.com/starboardrealtors" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
+              </a></li>
+              <li><a href="https://www.instagram.com/starboardrealtors" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
                 <FaInstagram size={20} />
-              </a>
-              <a href="https://youtube.com/@starboardrealtors2646" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
+              </a></li>
+              <li><a href="https://youtube.com/@starboardrealtors2646" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-deepblue hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
                 <FaYoutube size={20} />
-              </a>
-            </div>
+              </a></li>
+            </ul>
+            </nav>
           </div>
 
-          <div>
+          <nav aria-label="Footer services">
             <h4 className="font-serif text-xl mb-6 text-gold">Services</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
               <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Commercial Leasing</a></li>
@@ -57,9 +59,9 @@ export default function Footer() {
               <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Luxury Residential Sales</a></li>
               <li><a href="#services" className="hover:text-gold hover:pl-2 transition-all">Property Consulting</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Footer quick links">
             <h4 className="font-serif text-xl mb-6 text-gold">Quick Links</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
               <li><a href="#about" className="hover:text-gold hover:pl-2 transition-all">About Us</a></li>
@@ -68,9 +70,9 @@ export default function Footer() {
               <li><a href="#achievements" className="hover:text-gold hover:pl-2 transition-all">Key Achievements</a></li>
               <li><a href="#properties" className="hover:text-gold hover:pl-2 transition-all">Featured Properties</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <address className="not-italic">
             <h4 className="font-serif text-xl mb-6 text-gold">Contact</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
               <li>201, 2nd Floor, Nandan Aspira</li>
@@ -80,17 +82,17 @@ export default function Footer() {
               <li className="text-white">Email: <a href="mailto:connect@starboardrealtors.co.in" className="hover:text-gold">connect@starboardrealtors.co.in</a></li>
               <li className="pt-2">Working Hours: 9:00 AM – 7:00 PM</li>
             </ul>
-          </div>
+          </address>
 
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 tracking-wider">
           <p>&copy; 2024 Starboard Realtors. All rights reserved.</p>
-          <div className="flex flex-col sm:flex-row gap-4 items-center uppercase">
-            <span>MahaRERA: A52100030663</span>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <span>GST: 27BUSPR1519J1Z1</span>
-          </div>
+          <ul className="flex flex-col sm:flex-row gap-4 items-center uppercase">
+            <li>MahaRERA: A52100030663</li>
+            <li aria-hidden="true" className="hidden sm:inline text-white/20">|</li>
+            <li>GST: 27BUSPR1519J1Z1</li>
+          </ul>
         </div>
       </div>
     </footer>

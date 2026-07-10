@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaWhatsapp, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -26,6 +25,7 @@ export default function Navbar() {
     <>
       <nav
         suppressHydrationWarning
+        aria-label="Primary navigation"
         className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${
           menuOpen 
             ? "bg-transparent border-transparent text-white" 
@@ -38,18 +38,18 @@ export default function Navbar() {
           
           {/* Left: Logo with Text */}
           <div className="flex items-center gap-2 md:gap-3">
-            <a href="/" className="flex items-center group z-50">
+            <Link href="/" className="flex items-center group z-50">
               <Image 
-                src="/images/New logo.png" 
+                src="/images/New logo.webp" 
                 alt="Starboard Realtors Logo" 
                 width={80} 
                 height={80} 
-                priority
+                preload
                 className={`h-10 md:h-12 w-auto object-contain transition-all duration-500 ${
                   scrolled && !menuOpen ? 'scale-90' : 'scale-100'
                 } ${menuOpen ? 'brightness-0 invert' : ''}`}
               />
-            </a>
+            </Link>
             <div className={`h-10 md:h-12 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
             <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5 z-50">
               <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-deepblue'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
@@ -115,7 +115,8 @@ export default function Navbar() {
         {/* Background glow for luxury feel */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-        <div className="flex flex-col items-start space-y-4 sm:space-y-6 md:space-y-8 relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pt-12 md:pt-0">
+        <nav aria-label="Expanded navigation" className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pt-12 md:pt-0">
+        <ul className="flex flex-col items-start space-y-4 sm:space-y-6 md:space-y-8">
           {[
             { name: "Home", href: "/" },
             { name: "About Us", href: "#about" },
@@ -124,7 +125,7 @@ export default function Navbar() {
             { name: "Testimonials", href: "#testimonials" },
             { name: "Contact", href: "#contact" }
           ].map((item, i) => (
-            <div key={i} className={`overflow-hidden w-full`}>
+            <li key={i} className={`overflow-hidden w-full`}>
               <a 
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
@@ -136,9 +137,10 @@ export default function Navbar() {
                 <span className="w-0 h-[2px] bg-gold mr-0 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:mr-4 sm:group-hover:mr-6 ease-out"></span>
                 <span className="leading-tight">{item.name}</span>
               </a>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+        </nav>
 
         {/* Social Media Icons Footer in Menu */}
         <div 
@@ -146,20 +148,22 @@ export default function Navbar() {
             menuOpen ? 'opacity-100 translate-y-0 delay-700' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="flex gap-4">
-            <a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
+          <nav aria-label="Social links">
+          <ul className="flex gap-4">
+            <li><a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
               <FaWhatsapp size={18} />
-            </a>
-            <a href="https://www.linkedin.com/company/starboard-realtors/" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
+            </a></li>
+            <li><a href="https://www.linkedin.com/company/starboard-realtors/" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
               <FaLinkedinIn size={18} />
-            </a>
-            <a href="https://www.instagram.com/starboardrealtors" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
+            </a></li>
+            <li><a href="https://www.instagram.com/starboardrealtors" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
               <FaInstagram size={18} />
-            </a>
-            <a href="https://youtube.com/@starboardrealtors2646" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
+            </a></li>
+            <li><a href="https://youtube.com/@starboardrealtors2646" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
               <FaYoutube size={18} />
-            </a>
-          </div>
+            </a></li>
+          </ul>
+          </nav>
         </div>
       </div>
     </>

@@ -1,24 +1,20 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { MapPin } from 'lucide-react';
+
+const DynamicMapComponent = dynamic(() => import('@/components/MapComponent'), {
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-[#0F1C2D]">
+      <div className="text-gold font-serif text-lg tracking-widest animate-pulse">Loading Map...</div>
+    </div>
+  ),
+  ssr: false,
+});
 
 export default function MapSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
-
-  const MapComponent = useMemo(
-    () =>
-      dynamic(() => import('@/components/MapComponent'), {
-        loading: () => (
-          <div className="w-full h-full flex items-center justify-center bg-[#0F1C2D]">
-            <div className="text-gold font-serif text-lg tracking-widest animate-pulse">Loading Map...</div>
-          </div>
-        ),
-        ssr: false,
-      }),
-    []
-  );
 
   return (
     <section className="w-full py-16 lg:py-24 bg-[#0F1C2D] relative border-t border-white/10 z-0">
@@ -30,7 +26,7 @@ export default function MapSection() {
           {/* Deep Blue Tint Overlay */}
           <div className="absolute inset-0 bg-[#0F1C2D] mix-blend-screen pointer-events-none z-[400]" />
           
-          <MapComponent />
+          <DynamicMapComponent />
           
           {/* Custom Overlay Popup - Guaranteed to show */}
           {isPopupOpen && (

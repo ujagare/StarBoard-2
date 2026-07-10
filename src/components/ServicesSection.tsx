@@ -4,14 +4,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesSection() {
   const sectionRef = useRef(null);
-  const textRef = useRef(null);
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -47,11 +45,11 @@ export default function ServicesSection() {
             style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
           >
             <Image
-              src="/images/Services/ChatGPT Image Jun 25, 2026, 10_56_16 AM.png"
-              alt="Starboard Services"
+              src="/images/Services/ChatGPT Image Jun 25, 2026, 10_56_16 AM.webp"
+              alt="Starboard Realtors premium real estate services"
               fill
-              quality={100}
-              unoptimized
+              quality={82}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -64,24 +62,24 @@ export default function ServicesSection() {
               Our expertise spans commercial leasing, office space acquisitions, investment advisory, developer mandates, and premium residential transactions. With deep market knowledge and strategic partnerships, we provide tailored solutions that align with our clients&apos; goals.
             </p>
             
-            <div className="pt-4 grid grid-cols-2 gap-4 md:gap-6">
-              <div className="border border-white/20 p-6 hover:border-gold transition-colors">
+            <ul className="pt-4 grid grid-cols-2 gap-4 md:gap-6">
+              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h4 className="text-gold font-serif text-xl mb-2">Commercial</h4>
                 <p className="text-gray-400 font-light text-sm">Leasing & Sales</p>
-              </div>
-              <div className="border border-white/20 p-6 hover:border-gold transition-colors">
+              </li>
+              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h4 className="text-gold font-serif text-xl mb-2">Residential</h4>
                 <p className="text-gray-400 font-light text-sm">Luxury Sales</p>
-              </div>
-              <div className="border border-white/20 p-6 hover:border-gold transition-colors">
+              </li>
+              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h4 className="text-gold font-serif text-xl mb-2">Retail</h4>
                 <p className="text-gray-400 font-light text-sm">Leasing</p>
-              </div>
-              <div className="border border-white/20 p-6 hover:border-gold transition-colors">
+              </li>
+              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h4 className="text-gold font-serif text-xl mb-2">Advisory</h4>
                 <p className="text-gray-400 font-light text-sm">Investment & Consulting</p>
-              </div>
-            </div>
+              </li>
+            </ul>
 
             <div className="pt-6">
               <a href="#contact" className="inline-block border border-gold text-gold px-8 py-3 uppercase tracking-widest text-sm font-semibold hover:bg-gold hover:text-deepblue transition-colors">

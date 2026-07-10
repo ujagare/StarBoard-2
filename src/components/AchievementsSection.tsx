@@ -36,8 +36,8 @@ const stats = [
 
 export default function AchievementsSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const statsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const numbersRef = useRef<(HTMLDivElement | null)[]>([]);
+  const statsRef = useRef<(HTMLElement | null)[]>([]);
+  const numbersRef = useRef<(HTMLElement | null)[]>([]);
   const [animatedValues, setAnimatedValues] = useState<number[]>([0, 0, 0, 0]);
 
   useEffect(() => {
@@ -90,52 +90,50 @@ export default function AchievementsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Label */}
-        <div className="flex items-center justify-center gap-4 mb-8">
+        <header className="text-center mb-20">
+          <div className="flex items-center justify-center gap-4 mb-8">
           <div className="w-12 h-[1px] bg-gold/50"></div>
           <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">Key Achievements</span>
           <div className="w-12 h-[1px] bg-gold/50"></div>
-        </div>
-
-        {/* Main Heading */}
-        <div className="text-center mb-20">
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl text-white">
             <AnimatedText text="A track record," /> <span className="text-gold italic"><AnimatedText text="measured in trust." /></span>
           </h2>
-        </div>
+        </header>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:flex md:flex-row md:justify-between items-center md:items-start border-b border-white/10 pb-16 mb-12 relative gap-8 md:gap-0">
+        <dl className="grid grid-cols-2 md:flex md:flex-row md:justify-between items-center md:items-start border-b border-white/10 pb-16 mb-12 relative gap-8 md:gap-0">
           
           {stats.map((stat, index) => (
-            <div 
+            <div
               key={index} 
               ref={(el) => { statsRef.current[index] = el; }}
               className={`w-full md:w-1/4 text-center py-4 md:py-0 relative ${
                 index !== stats.length - 1 ? 'md:after:content-[""] md:after:absolute md:after:right-0 md:after:top-0 md:after:bottom-0 md:after:w-[1px] md:after:bg-white/10' : ''
               }`}
             >
-              <div 
+              <dt 
                 ref={(el) => { numbersRef.current[index] = el; }}
                 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gold mb-3 md:mb-4"
               >
                 {stat.prefix}{animatedValues[index]}{stat.suffix}
-              </div>
-              <div className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] text-gray-300 uppercase whitespace-pre-line leading-relaxed">
+              </dt>
+              <dd className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] text-gray-300 uppercase whitespace-pre-line leading-relaxed">
                 {stat.label}
-              </div>
+              </dd>
             </div>
           ))}
 
-        </div>
+        </dl>
 
         {/* Bottom Tags */}
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[9px] sm:text-[11px] tracking-[0.2em] text-gray-400 uppercase">
-          <span>Exclusive Sales Mandates</span>
-          <span className="w-1 h-1 rounded-full bg-gold/50"></span>
-          <span>Commercial Leasing Specialists</span>
-          <span className="w-1 h-1 rounded-full bg-gold/50"></span>
-          <span>Trusted by CXOs & HNIs</span>
-        </div>
+        <ul className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[9px] sm:text-[11px] tracking-[0.2em] text-gray-400 uppercase">
+          <li>Exclusive Sales Mandates</li>
+          <li aria-hidden="true" className="w-1 h-1 rounded-full bg-gold/50"></li>
+          <li>Commercial Leasing Specialists</li>
+          <li aria-hidden="true" className="w-1 h-1 rounded-full bg-gold/50"></li>
+          <li>Trusted by CXOs & HNIs</li>
+        </ul>
 
       </div>
     </section>

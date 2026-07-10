@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import AnimatedText from "./AnimatedText";
-import { CheckCircle2 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +49,8 @@ export default function ContactSection() {
           </h2>
 
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 w-full mt-4">
+            <fieldset className="space-y-6">
+              <legend className="sr-only">Real estate inquiry details</legend>
             {/* Name Fields */}
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full relative group">
@@ -156,6 +157,7 @@ export default function ContactSection() {
               <span className="absolute inset-0 w-0 bg-gold transition-all duration-500 ease-out group-hover:w-full"></span>
               <span className="relative z-10">Submit Inquiry</span>
             </button>
+            </fieldset>
           </form>
         </div>
 
@@ -166,11 +168,11 @@ export default function ContactSection() {
           style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
         >
           <Image
-            src="/images/Services/contact.png"
-            alt="Starboard Realtors Premium Properties"
+            src="/images/Services/contact.webp"
+            alt="Starboard Realtors premium property consultation"
             fill
-            quality={100}
-            unoptimized
+            quality={82}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

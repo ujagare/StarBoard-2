@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,42 +13,42 @@ const properties = [
     name: "Panchshil – 57 Avenue",
     location: "Mundhwa",
     details: "6.5 Acre Parcel | 4 Premium Towers",
-    image: "/images/FEATURED OPPORTUNITIES/Panchashil.png",
+    image: "/images/FEATURED OPPORTUNITIES/Panchashil.webp",
     pdf: "#" // No specific PDF provided
   },
   {
     name: "The Balmoral Hillside",
     location: "Kasturi",
     details: "5 Acre Development | 2 Exclusive Towers",
-    image: "/images/FEATURED OPPORTUNITIES/Kasturi.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Kasturi.webp",
     pdf: "/images/PDF/The Balmoral Hillside Brochure Tower A & B.pdf"
   },
   {
     name: "Malpani R-Ramanujan",
     location: "Main Baner Road",
     details: "Grade A Commercial | 18,000 Sq.Ft. Floor",
-    image: "/images/FEATURED OPPORTUNITIES/Malpani.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Malpani.webp",
     pdf: "/images/PDF/M-RAMANUJAN - Brochure.pdf"
   },
   {
     name: "7 Modibaug",
     location: "Suma Shilp",
     details: "Exclusive 4 BHK Residences",
-    image: "/images/FEATURED OPPORTUNITIES/Suma Shilpa.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Suma Shilpa.webp",
     pdf: "/images/PDF/7 Modibaug Brochure_03 Digital.pdf"
   },
   {
     name: "JAYKA",
     location: "Baner",
     details: "Grade A+ Commercial Icon | 109m Height",
-    image: "/images/FEATURED OPPORTUNITIES/Jayaka.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Jayaka.webp",
     pdf: "/images/PDF/JST  E brochure.pdf"
   },
   {
     name: "Amar Oasis",
     location: "Pune",
     details: "Ultra Luxury Twin Tower Development",
-    image: "/images/FEATURED OPPORTUNITIES/Amar.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Amar.webp",
     pdf: "/images/PDF/Amar Oasis Digital Brochure (Tower B).pdf"
   }
 ];
@@ -69,7 +68,9 @@ export default function FeaturedProperties() {
     });
 
     // Animate each card
-    cardsRef.current.forEach((card, index) => {
+    const cards = cardsRef.current;
+
+    cards.forEach((card) => {
       if (card) {
         gsap.fromTo(
           card,
@@ -94,7 +95,7 @@ export default function FeaturedProperties() {
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars.trigger && cardsRef.current.includes(trigger.vars.trigger as HTMLElement)) {
+        if (trigger.vars.trigger && cards.includes(trigger.vars.trigger as HTMLElement)) {
           trigger.kill();
         }
       });
@@ -112,36 +113,40 @@ export default function FeaturedProperties() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {properties.map((property, index) => (
-            <a 
+            <article
               key={index} 
-              href={property.pdf}
-              download={property.pdf !== "#" ? true : undefined}
-              target={property.pdf !== "#" ? "_blank" : undefined}
-              rel="noopener noreferrer"
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="group cursor-pointer block"
+              className="group"
             >
-              <div className="relative h-[500px] md:h-[550px] w-full overflow-hidden rounded-sm mb-6 shadow-md group-hover:shadow-xl transition-shadow duration-500">
-                <Image
-                  src={property.image}
-                  alt={property.name}
-                  fill
-                  quality={100}
-                  unoptimized
-                  className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
-                <div className="absolute top-4 left-4 bg-gold/90 text-deepblue px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">
-                  {property.location}
+              <a
+                href={property.pdf}
+                download={property.pdf !== "#" ? true : undefined}
+                target={property.pdf !== "#" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="block cursor-pointer"
+              >
+                <div className="relative h-[500px] md:h-[550px] w-full overflow-hidden rounded-sm mb-6 shadow-md group-hover:shadow-xl transition-shadow duration-500">
+                  <Image
+                    src={property.image}
+                    alt={`${property.name} premium property in ${property.location}`}
+                    fill
+                    quality={82}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+                  <div className="absolute top-4 left-4 bg-gold/90 text-deepblue px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">
+                    {property.location}
+                  </div>
                 </div>
-              </div>
-              <h3 className="font-serif text-2xl text-deepblue mb-1 group-hover:text-gold transition-colors">
-                {property.name}
-              </h3>
-              <p className="text-sm tracking-wide text-gray-500 font-light">
-                {property.details}
-              </p>
-            </a>
+                <h3 className="font-serif text-2xl text-deepblue mb-1 group-hover:text-gold transition-colors">
+                  {property.name}
+                </h3>
+                <p className="text-sm tracking-wide text-gray-500 font-light">
+                  {property.details}
+                </p>
+              </a>
+            </article>
           ))}
         </div>
         

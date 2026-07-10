@@ -10,9 +10,9 @@ export default function ImageAnimator() {
 
   useGSAP(() => {
     // Select all elements with the class 'image' within the document
-    const images = gsap.utils.toArray(".image");
+    const images = gsap.utils.toArray<HTMLElement>(".image");
     
-    images.forEach((img: any) => {
+    images.forEach((img) => {
       gsap.from(img, {
         clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
         duration: 1.2,
@@ -25,9 +25,9 @@ export default function ImageAnimator() {
     });
 
     // Select all elements with the class 'line' for paragraph animations
-    const lines = gsap.utils.toArray(".line");
+    const lines = gsap.utils.toArray<HTMLElement>(".line");
     
-    lines.forEach((line: any) => {
+    lines.forEach((line) => {
       gsap.from(line, {
         y: 30, 
         opacity: 0,

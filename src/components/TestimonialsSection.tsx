@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
           <div ref={marqueeRef} className="flex gap-12" style={{ width: 'max-content' }}>
             {/* Render testimonials twice for seamless loop */}
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div 
+              <article 
                 key={index}
                 className="testimonial-card flex-shrink-0 w-[240px] sm:w-[320px] md:w-[380px] lg:w-[400px] bg-offwhite p-5 sm:p-6 md:p-8 lg:p-10 rounded-sm shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border-2 border-gold/30 hover:border-gold hover:shadow-[0_20px_50px_-20px_rgba(197,160,60,0.3)] transition-all duration-500 relative group"
               >
@@ -95,17 +95,17 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 italic relative z-10">
+                <blockquote className="text-xs sm:text-sm md:text-base text-gray-600 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 italic relative z-10">
                   &quot;{testimonial.content}&quot;
-                </p>
+                </blockquote>
                 
-                <div className="mt-auto border-t border-gray-100 pt-3 sm:pt-4 md:pt-5">
+                <footer className="mt-auto border-t border-gray-100 pt-3 sm:pt-4 md:pt-5">
                   <h4 className="font-serif text-sm sm:text-base md:text-lg lg:text-xl text-deepblue">{testimonial.name}</h4>
                   <p className="text-[10px] sm:text-xs md:text-sm text-gold uppercase tracking-widest font-medium mt-0.5 sm:mt-1 leading-tight">
                     {testimonial.role}
                   </p>
-                </div>
-              </div>
+                </footer>
+              </article>
             ))}
           </div>
         </div>
