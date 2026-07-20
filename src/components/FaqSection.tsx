@@ -64,8 +64,8 @@ export default function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={containerRef}>
         
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 md:mb-6">
-            <AnimatedText text="Frequently Asked" /> <span className="text-gold italic"><AnimatedText text="Questions" /></span>
+          <h2 className="font-serif text-6xl md:text-7xl text-white mb-4 md:mb-6">
+            <AnimatedText text="Frequently Asked" /> <span className="text-gold"><AnimatedText text="Questions" /></span>
           </h2>
           <p className="text-sm md:text-base text-white font-light tracking-wide max-w-2xl mx-auto">
             Everything you need to know about our services, expertise, and how we deliver value.
@@ -76,7 +76,9 @@ export default function FaqSection() {
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const answerId = `faq-answer-${index}`;
-            
+            const iconColor = isOpen ? 'text-[#0F1C2D]' : 'text-white';
+            const iconState = isOpen ? 'border-gold bg-gold rotate-45' : 'border-white/20 group-hover:border-gold group-hover:text-gold';
+
             return (
               <li 
                 key={index} 
@@ -95,9 +97,9 @@ export default function FaqSection() {
                   }`}>
                     {faq.question}
                   </h3>
-                  <div className={`shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full border flex items-center justify-center transition-all duration-50                    isOpen ? 'border-gold bg-gold text-[#0F1C2D] rotate-45' : 'border-white/20 text-white group-hover:border-gold group-hover:text-gold'
+                  <div className={`shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full border flex items-center justify-center transition-all duration-50                    ${iconState} ${iconColor}
                   }`}>
-                    <Plus size={16} className="sm:w-[18px] sm:h-[18px]" strokeWidth={1.5} />
+                    <Plus size={16} className="sm:w-4.5 sm:h-4.5" strokeWidth={1.5} />
                   </div>
                 </button>
                 

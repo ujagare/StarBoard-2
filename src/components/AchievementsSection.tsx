@@ -92,12 +92,13 @@ export default function AchievementsSection() {
         {/* Top Label */}
         <header className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-12 h-[1px] bg-gold/50"></div>
+          <div className="w-12 h-px bg-gold/50"></div>
           <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">Key Achievements</span>
-          <div className="w-12 h-[1px] bg-gold/50"></div>
+          <div className="w-12 h-px bg-gold/50"></div>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-white">
-            <AnimatedText text="A track record," /> <span className="text-gold italic"><AnimatedText text="measured in trust." /></span>
+          <h2 className="font-serif text-6xl md:text-7xl text-white">
+            <span className="whitespace-nowrap"><AnimatedText text="A Track Record," /></span>{" "}
+            <span className="text-gold whitespace-nowrap"><AnimatedText text="Measured In Trust." /></span>
           </h2>
         </header>
 
@@ -109,12 +110,12 @@ export default function AchievementsSection() {
               key={index} 
               ref={(el) => { statsRef.current[index] = el; }}
               className={`w-full md:w-1/4 text-center py-4 md:py-0 relative ${
-                index !== stats.length - 1 ? 'md:after:content-[""] md:after:absolute md:after:right-0 md:after:top-0 md:after:bottom-0 md:after:w-[1px] md:after:bg-white/10' : ''
+                index !== stats.length - 1 ? 'md:after:content-[""] md:after:absolute md:after:right-0 md:after:top-0 md:after:bottom-0 md:after:w-px md:after:bg-white/10' : ''
               }`}
             >
               <dt 
                 ref={(el) => { numbersRef.current[index] = el; }}
-                className="font-serif text-4xl md:text-5xl lg:text-6xl text-gold mb-3 md:mb-4"
+                className="font-serif text-6xl md:text-7xl lg:text-8xl text-gold mb-3 md:mb-4"
               >
                 {stat.prefix}{animatedValues[index]}{stat.suffix}
               </dt>

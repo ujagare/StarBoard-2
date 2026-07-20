@@ -43,10 +43,10 @@ export default function FounderSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <header className="mb-8 flex flex-col items-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-4 uppercase tracking-[0.2em]">
+          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold mb-4 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-center">
             <span className="whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="whitespace-nowrap"><AnimatedText text="The Founder" /></span>
           </h2>
-          <div className="w-24 h-[1px] bg-gold/50 mx-auto"></div>
+          <div className="w-24 h-px bg-gold/50 mx-auto"></div>
         </header>
 
         <figure className="relative">
@@ -70,7 +70,7 @@ export default function FounderSection() {
         
         <figcaption className="mt-10 flex flex-col items-center md:items-end md:pr-10">
           <div className="w-12 h-[2px] bg-gold mb-3"></div>
-          <cite className="font-serif text-2xl text-white not-italic">Sandesh Rolston</cite>
+          <cite className="font-serif text-2xl text-white not-italic">Mr. Sandesh Rolston</cite>
           <p className="text-gold font-light tracking-widest uppercase text-xs mt-1">
             Founder & Director
           </p>

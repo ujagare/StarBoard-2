@@ -88,15 +88,15 @@ export default function WhyChooseUs() {
         
         {/* Top Eyebrow Section */}
         <div className="flex items-center justify-center gap-4 mb-6">
-          <div className="w-12 h-[1px] bg-gold/50"></div>
+          <div className="w-12 h-px bg-gold/50"></div>
           <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold whitespace-nowrap">Our Distinct Advantage</span>
-          <div className="w-12 h-[1px] bg-gold/50"></div>
+          <div className="w-12 h-px bg-gold/50"></div>
         </div>
 
         {/* Heading & Subtitle */}
         <div className="text-center mb-20">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
-            <AnimatedText text="Why Choose" /> <span className="text-gold italic"><AnimatedText text="Starboard Realtors" /></span>
+          <h2 className="font-serif text-6xl md:text-7xl text-white mb-6 leading-tight">
+            <AnimatedText text="Why Choose" /> <span className="text-gold"><AnimatedText text="Starboard Realtors" /></span>
           </h2>
           <p className="text-gray-400 font-light tracking-wide max-w-2xl mx-auto text-lg leading-relaxed">
             We deliver a higher standard of real estate advisory, combining deep intelligence with absolute transparency to guide your path.
@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
                 className="why-choose-card relative border border-gold/30 bg-[#122032] p-4 md:p-8 rounded-sm transition-all duration-500 shadow-[0_15px_40px_-15px_rgba(207,168,95,0.15)] hover:border-gold hover:bg-[#1a2d47] hover:scale-105 flex flex-col justify-between overflow-hidden group cursor-pointer"
               >
                 {/* Decorative Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-br from-gold/5 via-transparent to-transparent opacity-100 transition-opacity duration-500 pointer-events-none" />
                 
                 {/* Card Corner Accent */}
                 <div className="absolute top-0 right-0 border-t-2 border-r-2 border-gold/40 w-4 h-4 transition-all duration-500 rounded-tr-sm" />

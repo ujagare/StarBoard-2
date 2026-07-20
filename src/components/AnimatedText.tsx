@@ -39,7 +39,7 @@ export default function AnimatedText({ text, className = "" }: AnimatedTextProps
   }, { scope: containerRef });
 
   return (
-    <span ref={containerRef} className={`inline-block ${className}`}>
+    <span ref={containerRef} className={`inline-block ${className}`} aria-label={text}>
       {words.map((word, wordIndex) => (
         <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em]">
           {word.split("").map((char, charIndex) => (

@@ -20,7 +20,8 @@ export default function HeroSection() {
           quality={85}
           className="object-cover object-top"
           sizes="100vw"
-          preload
+          priority
+          loading="eager"
         />
         {/* Dark Overlay for text readability */}
         <div className="absolute inset-0 bg-black/60" />
@@ -30,11 +31,11 @@ export default function HeroSection() {
       <div className="relative z-10 text-left text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
           <h1 
-            className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 drop-shadow-lg uppercase tracking-wide leading-tight"
+            className="font-serif text-6xl md:text-7xl lg:text-8xl mb-6 drop-shadow-lg uppercase tracking-wide leading-tight"
           >
             <AnimatedText text="Curating" />
             <br />
-            <span className="text-white italic">
+            <span className="text-white">
               <AnimatedText text="exceptional spaces" />
             </span>
           </h1>

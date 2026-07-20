@@ -96,13 +96,25 @@ export default function PopupForm() {
             <p className="text-sm md:text-base text-gray-300">Experience premium living with Starboard Realtors.</p>
           </header>
 
-          <form className="space-y-6 flex flex-col">
+          <form className="space-y-6 flex flex-col" onSubmit={(e) => {
+            e.preventDefault();
+            const form = e.target as HTMLFormElement;
+            const formData = new FormData(form);
+            fetch("https://formsubmit.co/ajax/connect@starboardrealtors.co.in", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(Object.fromEntries(formData.entries())),
+            }).catch(() => {});
+            form.reset();
+            handleClose();
+          }}>
             <fieldset className="space-y-6">
               <legend className="sr-only">Register your interest</legend>
             <div className="relative group">
               <input 
-                type="text" 
+                type="text"
                 required
+                autoComplete="name"
                 className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
                 placeholder="Name"
                 id="popup-name"
@@ -113,13 +125,14 @@ export default function PopupForm() {
               >
                 Full Name
               </label>
-              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
             </div>
 
             <div className="relative group">
               <input 
-                type="tel" 
+                type="tel"
                 required
+                autoComplete="tel-national"
                 className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
                 placeholder="Phone"
                 id="popup-phone"
@@ -130,13 +143,14 @@ export default function PopupForm() {
               >
                 Phone Number
               </label>
-              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
             </div>
 
             <div className="relative group">
               <input 
-                type="email" 
+                type="email"
                 required
+                autoComplete="email"
                 className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
                 placeholder="Email"
                 id="popup-email"
@@ -147,7 +161,7 @@ export default function PopupForm() {
               >
                 Email Address
               </label>
-              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
             </div>
 
             <button 

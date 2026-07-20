@@ -13,14 +13,14 @@ const properties = [
     name: "Panchshil – 57 Avenue",
     location: "Mundhwa",
     details: "6.5 Acre Parcel | 4 Premium Towers",
-    image: "/images/FEATURED OPPORTUNITIES/Panchashil.webp",
+    image: "/images/FEATURED OPPORTUNITIES/Panchashil1.webp",
     pdf: "#" // No specific PDF provided
   },
   {
     name: "The Balmoral Hillside",
-    location: "Kasturi",
+    location: "Baner",
     details: "5 Acre Development | 2 Exclusive Towers",
-    image: "/images/FEATURED OPPORTUNITIES/Kasturi.webp",
+    image: "/images/FEATURED OPPORTUNITIES/Kasturi1.webp",
     pdf: "/images/PDF/The Balmoral Hillside Brochure Tower A & B.pdf"
   },
   {
@@ -32,7 +32,7 @@ const properties = [
   },
   {
     name: "7 Modibaug",
-    location: "Suma Shilp",
+    location: "Shivajinagar",
     details: "Exclusive 4 BHK Residences",
     image: "/images/FEATURED OPPORTUNITIES/Suma Shilpa.webp",
     pdf: "/images/PDF/7 Modibaug Brochure_03 Digital.pdf"
@@ -46,7 +46,7 @@ const properties = [
   },
   {
     name: "Amar Oasis",
-    location: "Pune",
+    location: "Baner – Pashan Link Road",
     details: "Ultra Luxury Twin Tower Development",
     image: "/images/FEATURED OPPORTUNITIES/Amar.webp",
     pdf: "/images/PDF/Amar Oasis Digital Brochure (Tower B).pdf"
@@ -106,8 +106,8 @@ export default function FeaturedProperties() {
     <section id="properties" ref={sectionRef} className="py-24 bg-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-deepblue whitespace-nowrap">
-            <AnimatedText text="Featured" /> <span className="text-gold italic"><AnimatedText text="Properties" /></span>
+          <h2 className="font-serif text-6xl md:text-7xl text-deepblue whitespace-nowrap">
+            <AnimatedText text="Featured" /> <span className="text-gold"><AnimatedText text="Properties" /></span>
           </h2>
         </div>
 
@@ -125,26 +125,28 @@ export default function FeaturedProperties() {
                 rel="noopener noreferrer"
                 className="block cursor-pointer"
               >
-                <div className="relative h-[500px] md:h-[550px] w-full overflow-hidden rounded-sm mb-6 shadow-md group-hover:shadow-xl transition-shadow duration-500">
-                  <Image
-                    src={property.image}
-                    alt={`${property.name} premium property in ${property.location}`}
-                    fill
-                    quality={82}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
-                  <div className="absolute top-4 left-4 bg-gold/90 text-deepblue px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">
-                    {property.location}
-                  </div>
-                </div>
-                <h3 className="font-serif text-2xl text-deepblue mb-1 group-hover:text-gold transition-colors">
-                  {property.name}
-                </h3>
-                <p className="text-sm tracking-wide text-gray-500 font-light">
-                  {property.details}
-                </p>
+                 <div className="relative h-125 md:h-137.5 w-full overflow-hidden rounded-sm mb-6 shadow-md group-hover:shadow-xl transition-shadow duration-500">
+                   <Image
+                     src={property.image}
+                     alt={`${property.name} premium property in ${property.location}`}
+                     fill
+                     quality={82}
+                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                     className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                   />
+                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+                 </div>
+                 <div className="border-l-2 border-gold pl-4">
+                   <p className="text-[10px] sm:text-xs text-gold uppercase tracking-[0.2em] font-semibold mb-1">
+                     {property.location}
+                   </p>
+                   <h3 className="font-serif text-2xl text-deepblue mb-1 group-hover:text-gold transition-colors">
+                     {property.name}
+                   </h3>
+                   <p className="text-sm tracking-wide text-gray-500 font-light">
+                     {property.details}
+                   </p>
+                 </div>
               </a>
             </article>
           ))}

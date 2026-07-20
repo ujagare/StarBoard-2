@@ -27,59 +27,62 @@ export default function Navbar() {
         suppressHydrationWarning
         aria-label="Primary navigation"
         className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${
-          menuOpen 
-            ? "bg-transparent border-transparent text-white" 
+          menuOpen
+            ? "bg-transparent border-transparent text-white"
             : scrolled
-              ? "bg-white backdrop-blur-lg shadow-xl text-deepblue border-gray-200"
-              : "bg-white/95 backdrop-blur-sm text-deepblue border-gray-200 shadow-md"
+              ? "bg-[#0F1C2D] backdrop-blur-lg shadow-xl text-white border-white/10"
+              : "bg-black/40 backdrop-blur-sm text-white border-white/10 shadow-md"
         }`}
       >
-        <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center py-4">
-          
+        <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center h-[100px]">
+
           {/* Left: Logo with Text */}
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center -ml-2">
             <Link href="/" className="flex items-center group z-50">
-              <Image 
-                src="/images/New logo.webp" 
-                alt="Starboard Realtors Logo" 
-                width={80} 
-                height={80} 
-                preload
-                className={`h-10 md:h-12 w-auto object-contain transition-all duration-500 ${
+              <Image
+                src="/images/SR_Blue BG_logo.jpg (1).png"
+                alt="Starboard Realtors Logo"
+                width={160}
+                height={160}
+                priority
+                loading="eager"
+                className={`h-20 md:h-24 w-auto object-contain transition-all duration-500 ${
                   scrolled && !menuOpen ? 'scale-90' : 'scale-100'
-                } ${menuOpen ? 'brightness-0 invert' : ''}`}
+                }`}
               />
             </Link>
-            <div className={`h-10 md:h-12 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
+            <div className="-ml-3 flex items-center" style={{ transform: 'translateX(-5px)' }}>
+              <div className={`h-12 md:h-14 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
+            </div>
             <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5 z-50">
-              <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-deepblue'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
+              <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 STARBOARD
               </span>
-              <span className={`text-lg md:text-xl lg:text-2xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-deepblue'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
+              <span className={`text-lg md:text-xl lg:text-2xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 REALTORS
               </span>
             </div>
           </div>
 
           {/* Right: WhatsApp Icon & Hamburger Menu */}
-          <div className="flex items-center gap-4 md:gap-8 z-50 flex-shrink-0">
+          <div className="flex items-center gap-4 md:gap-8 z-50 shrink-0">
             {/* WhatsApp Icon - Hidden on Mobile */}
             <a
               href="https://wa.me/919769494723"
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden md:flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300 group ${
-                menuOpen 
-                  ? 'border-white/30 hover:border-white hover:bg-white' 
-                  : 'border-deepblue hover:bg-deepblue'
+                menuOpen
+                  ? 'border-white/30 hover:border-white hover:bg-white'
+                  : 'border-white/50 hover:bg-white'
               }`}
               aria-label="WhatsApp"
             >
               <svg
                 className={`w-5 h-5 transition-colors duration-300 ${
-                  menuOpen 
-                    ? 'fill-white group-hover:fill-deepblue' 
-                    : 'fill-deepblue group-hover:fill-white'
+                  menuOpen
+                    ? 'fill-white group-hover:fill-deepblue'
+                    : 'fill-white group-hover:fill-deepblue'
                 }`}
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,14 +94,14 @@ export default function Navbar() {
             {/* Hamburger Menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex flex-col justify-center items-center w-12 h-12 hover:opacity-70 transition-opacity z-50 relative flex-shrink-0"
+              className="flex flex-col justify-center items-center w-12 h-12 hover:opacity-70 transition-opacity z-50 relative shrink-0"
               aria-label="Toggle Menu"
             >
               <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-white rotate-45' : 'bg-deepblue translate-y-[-3px]'
+                menuOpen ? 'bg-white rotate-45' : 'bg-white translate-y-[-3px]'
               }`}></span>
               <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-white -rotate-45' : 'bg-deepblue translate-y-[3px]'
+                menuOpen ? 'bg-white -rotate-45' : 'bg-white translate-y-[3px]'
               }`}></span>
             </button>
           </div>
@@ -107,7 +110,7 @@ export default function Navbar() {
       </nav>
 
       {/* Premium Full-Screen Menu Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 bg-[#0F1C2D] z-40 flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
@@ -126,10 +129,10 @@ export default function Navbar() {
             { name: "Contact", href: "#contact" }
           ].map((item, i) => (
             <li key={i} className={`overflow-hidden w-full`}>
-              <a 
+              <a
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white hover:text-gold transition-all duration-500 uppercase tracking-[0.1em] relative group ${
+                className={`flex items-center font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-gold transition-all duration-500 uppercase tracking-[0.1em] relative group ${
                   menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                 }`}
                 style={{ transitionDelay: `${menuOpen ? 300 + (i * 100) : 0}ms` }}
@@ -143,23 +146,23 @@ export default function Navbar() {
         </nav>
 
         {/* Social Media Icons Footer in Menu */}
-        <div 
+        <div
           className={`absolute bottom-8 md:bottom-12 left-0 w-full px-8 md:px-16 flex justify-center items-center border-t border-white/10 pt-6 transition-all duration-1000 ${
             menuOpen ? 'opacity-100 translate-y-0 delay-700' : 'opacity-0 translate-y-10'
           }`}
         >
           <nav aria-label="Social links">
           <ul className="flex gap-4">
-            <li><a href="https://wa.me/message/DSNUILFNWD23N1" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
+            <li><a href="https://wa.me/message/DSNUILFNWD23N1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
               <FaWhatsapp size={18} />
             </a></li>
-            <li><a href="https://www.linkedin.com/company/starboard-realtors/" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
+            <li><a href="https://www.linkedin.com/company/starboard-realtors/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
               <FaLinkedinIn size={18} />
             </a></li>
-            <li><a href="https://www.instagram.com/starboardrealtors" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
+            <li><a href="https://www.instagram.com/starboardrealtors" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
               <FaInstagram size={18} />
             </a></li>
-            <li><a href="https://youtube.com/@starboardrealtors2646" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
+            <li><a href="https://youtube.com/@starboardrealtors2646" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
               <FaYoutube size={18} />
             </a></li>
           </ul>

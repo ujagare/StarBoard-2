@@ -34,7 +34,17 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // Submit form data
+    fetch("https://formsubmit.co/ajax/connect@starboardrealtors.co.in", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(Object.fromEntries(formData.entries())),
+    }).catch(() => {});
+
+    form.reset();
   };
 
   return (
@@ -44,7 +54,7 @@ export default function ContactSection() {
         
         {/* Left Side: Form */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-8 uppercase tracking-widest">
+          <h2 className="font-serif text-6xl md:text-7xl text-gold mb-8 uppercase tracking-widest">
             <AnimatedText text="Get In Touch" />
           </h2>
 
@@ -55,21 +65,23 @@ export default function ContactSection() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full relative group">
                 <input 
-                  type="text" 
-                  placeholder="First Name*" 
+                  type="text"
+                  placeholder="First Name*"
                   required
+                  autoComplete="given-name"
                   className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-deepblue placeholder:text-gray-400 text-sm peer"
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 peer-focus:w-full"></span>
               </div>
               <div className="w-full relative group">
                 <input 
-                  type="text" 
-                  placeholder="Last Name*" 
+                  type="text"
+                  placeholder="Last Name*"
                   required
+                  autoComplete="family-name"
                   className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-deepblue placeholder:text-gray-400 text-sm peer"
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 peer-focus:w-full"></span>
               </div>
             </div>
 
@@ -80,68 +92,45 @@ export default function ContactSection() {
                 <span>+91</span>
               </div>
               <input 
-                type="tel" 
-                placeholder="Phone Number*" 
+                type="tel"
+                placeholder="Phone Number*"
                 required
+                autoComplete="tel-national"
                 className="w-full px-0 py-3 bg-transparent border-0 focus:outline-none font-light text-deepblue placeholder:text-gray-400 text-sm peer"
               />
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 peer-focus:w-full"></span>
             </div>
 
             {/* Email Field */}
             <div className="relative group">
               <input 
-                type="email" 
-                placeholder="Email*" 
+                type="email"
+                placeholder="Email*"
                 required
+                autoComplete="email"
                 className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-deepblue placeholder:text-gray-400 text-sm peer"
               />
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
-            </div>
-
-            {/* Select Budget */}
-            <div className="relative group">
-              <select defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
-                <option value="" disabled>Select a Budget*</option>
-                <option value="1-5cr" className="text-gray-700">₹1 Cr - ₹5 Cr</option>
-                <option value="5-10cr" className="text-gray-700">₹5 Cr - ₹10 Cr</option>
-                <option value="10cr+" className="text-gray-700">₹10 Cr +</option>
-              </select>
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
-            </div>
-
-            {/* Select Unit Type */}
-            <div className="relative group">
-              <select defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
-                <option value="" disabled>Select Unit Type*</option>
-                <option value="commercial" className="text-gray-700">Commercial Office Space</option>
-                <option value="retail" className="text-gray-700">Retail Space</option>
-                <option value="residential" className="text-gray-700">Luxury Residential (4BHK+)</option>
-              </select>
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
-            </div>
-
-            {/* Purchase Timeline */}
-            <div className="relative group">
-              <select defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
-                <option value="" disabled>Purchase Timeline*</option>
-                <option value="immediate" className="text-gray-700">Immediate</option>
-                <option value="1-3-months" className="text-gray-700">1 to 3 Months</option>
-                <option value="3-6-months" className="text-gray-700">3 to 6 Months</option>
-                <option value="6-months+" className="text-gray-700">6 Months +</option>
-              </select>
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 peer-focus:w-full"></span>
             </div>
 
             {/* Select City/Nationality */}
             <div className="relative group">
               <select defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
-                <option value="" disabled>Select City*</option>
-                <option value="pune" className="text-gray-700">Pune</option>
-                <option value="mumbai" className="text-gray-700">Mumbai</option>
+                <option value="" disabled>Select Preferred Location*</option>
+                <option value="koregaon-park" className="text-gray-700">Koregaon Park</option>
+                <option value="kalyani-nagar" className="text-gray-700">Kalyani Nagar</option>
+                <option value="baner" className="text-gray-700">Baner</option>
+                <option value="balewadi" className="text-gray-700">Balewadi</option>
+                <option value="aundh" className="text-gray-700">Aundh</option>
+                <option value="kharadi" className="text-gray-700">Kharadi</option>
+                <option value="viman-nagar" className="text-gray-700">Viman Nagar</option>
+                <option value="senapati-bapat-road" className="text-gray-700">Senapati Bapat Road</option>
+                <option value="shivajinagar" className="text-gray-700">Shivajinagar</option>
+                <option value="hadapsar" className="text-gray-700">Hadapsar</option>
+                <option value="magarpatta" className="text-gray-700">Magarpatta</option>
                 <option value="other" className="text-gray-700">Other</option>
               </select>
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-500 peer-focus:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-500 peer-focus:w-full"></span>
             </div>
 
             {/* Disclaimer */}
@@ -164,7 +153,7 @@ export default function ContactSection() {
         {/* Right Side: Image */}
         <div 
           ref={imageRef}
-          className="w-full lg:w-1/2 relative h-[400px] lg:h-[500px] xl:h-[700px] rounded-sm overflow-hidden"
+          className="w-full lg:w-1/2 relative h-100 lg:h-125 xl:h-175 rounded-sm overflow-hidden"
           style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
         >
           <Image

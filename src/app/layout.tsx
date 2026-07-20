@@ -72,16 +72,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/images/Favicon/favicon-16x16.webp', sizes: '16x16', type: 'image/png' },
-      { url: '/images/Favicon/favicon-32x32.webp', sizes: '32x32', type: 'image/png' },
+      { url: '/images/Favicon/favicon-16x16.webp', sizes: '16x16', type: 'image/webp' },
+      { url: '/images/Favicon/favicon-32x32.webp', sizes: '32x32', type: 'image/webp' },
       { url: '/images/Favicon/favicon.ico' },
     ],
     apple: [
-      { url: '/images/Favicon/apple-touch-icon.webp', sizes: '180x180', type: 'image/png' },
+      { url: '/images/Favicon/apple-touch-icon.webp', sizes: '180x180', type: 'image/webp' },
     ],
     other: [
-      { url: '/images/Favicon/android-chrome-192x192.webp', sizes: '192x192', type: 'image/png' },
-      { url: '/images/Favicon/android-chrome-512x512.webp', sizes: '512x512', type: 'image/png' },
+      { url: '/images/Favicon/android-chrome-192x192.webp', sizes: '192x192', type: 'image/webp' },
+      { url: '/images/Favicon/android-chrome-512x512.webp', sizes: '512x512', type: 'image/webp' },
     ],
   },
   manifest: '/images/Favicon/site.webmanifest',

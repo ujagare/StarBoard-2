@@ -15,7 +15,7 @@
   --color-offwhite: #f8f8f8;
 
   --font-sans: var(--font-jost);
-  --font-serif: var(--font-playfair);
+  --font-serif: 'Microsoft Himalaya', var(--font-playfair), serif;
 }
 
 @media (prefers-color-scheme: dark) {

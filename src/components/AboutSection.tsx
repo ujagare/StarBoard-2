@@ -38,8 +38,8 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div className="space-y-8">
-            <h2 className="font-serif text-4xl md:text-5xl text-deepblue leading-tight">
-              <AnimatedText text="About" /> <span className="text-gold italic"><AnimatedText text="Starboard Realtors" /></span>
+            <h2 className="font-serif text-6xl md:text-7xl text-deepblue leading-tight">
+              <AnimatedText text="About" /> <span className="text-gold"><AnimatedText text="Starboard Realtors" /></span>
             </h2>
             <div className="space-y-4 text-lg text-gray-600 font-light leading-relaxed">
               <p className="line">
@@ -53,7 +53,7 @@ export default function AboutSection() {
 
           <div 
             ref={imageRef} 
-            className="relative h-[400px] lg:h-[500px] xl:h-[700px] w-full overflow-hidden rounded-sm shadow-2xl"
+            className="relative h-100 lg:h-125 xl:h-175 w-full overflow-hidden rounded-sm shadow-2xl"
             style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
           >
             {/* Premium corporate/office imagery */}

@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const developers = [
   { name: "Panchshil", logo: "/images/Builders Logo/panchshil-logo.webp" },
   { name: "Amar Builders", logo: "/images/Builders Logo/amar-dark.webp" },
-  { name: "Kasturi", logo: "/images/Builders Logo/kasturi-logo.svg" },
+  { name: "Kasturi", logo: "/images/Builders Logo/kasturi-logo black.webp" },
   { name: "Kolte Patil", logo: "/images/Builders Logo/kolte_patil-removebg-preview.webp" },
   { name: "Kalpataru", logo: "/images/Builders Logo/kalpataru.webp" },
   { name: "Gera", logo: "/images/Builders Logo/gera builder.webp" },
@@ -38,10 +38,10 @@ export default function DeveloperPartners() {
   }, []);
 
   return (
-    <section className="py-20 bg-offwhite border-t border-b border-gray-200 overflow-hidden">
+    <section className="py-20 bg-offwhite border-t border-b border-gray-200 overflow-hidden" aria-label="Developer partners">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="font-serif text-4xl md:text-5xl text-deepblue mb-4">
-          <span className="whitespace-nowrap"><AnimatedText text="Trusted Access to" /></span> <span className="whitespace-nowrap"><AnimatedText text="Pune's" /></span> <span className="text-gold italic whitespace-nowrap"><AnimatedText text="Leading Developers" /></span>
+        <h2 className="font-serif text-6xl md:text-7xl text-deepblue mb-4">
+          <span className="whitespace-nowrap"><AnimatedText text="Trusted Access to" /></span> <span className="whitespace-nowrap"><AnimatedText text="Pune's" /></span> <span className="text-gold whitespace-nowrap"><AnimatedText text="Leading Developers" /></span>
         </h2>
         <p className="line text-gray-500 font-light max-w-2xl mx-auto">
           Access to 100+ Premium Projects Across Pune Through Our Extensive Developer Network
@@ -52,7 +52,7 @@ export default function DeveloperPartners() {
         {/* We duplicate the array to create a seamless infinite scroll loop */}
         <ul ref={marqueeRef} className="flex gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 md:px-8 items-center">
           {[...developers, ...developers].map((dev, index) => (
-            <li key={index} className="flex-shrink-0 w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20 relative transition-transform duration-300 hover:scale-105">
+                <li key={index} className="shrink-0 w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20 relative transition-transform duration-300 hover:scale-105">
               <Image
                 src={dev.logo}
                 alt={`${dev.name} developer logo`}
