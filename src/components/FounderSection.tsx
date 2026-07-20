@@ -43,8 +43,8 @@ export default function FounderSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <header className="mb-8 flex flex-col items-center">
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold mb-4 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-center">
-            <span className="whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="whitespace-nowrap"><AnimatedText text="The Founder" /></span>
+          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold mb-4 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-center leading-[0.9] md:leading-tight">
+            <span className="md:whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="md:whitespace-nowrap"><AnimatedText text="The Founder" /></span>
           </h2>
           <div className="w-24 h-px bg-gold/50 mx-auto"></div>
         </header>

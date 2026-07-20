@@ -40,8 +40,8 @@ export default function DeveloperPartners() {
   return (
     <section className="py-20 bg-offwhite border-t border-b border-gray-200 overflow-hidden" aria-label="Developer partners">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="font-serif text-6xl md:text-7xl text-deepblue mb-4">
-          <span className="whitespace-nowrap"><AnimatedText text="Trusted Access to" /></span> <span className="whitespace-nowrap"><AnimatedText text="Pune's" /></span> <span className="text-gold whitespace-nowrap"><AnimatedText text="Leading Developers" /></span>
+        <h2 className="font-serif text-5xl md:text-7xl text-deepblue mb-4 leading-[0.9] md:leading-tight">
+          <span className="md:whitespace-nowrap"><AnimatedText text="Trusted Access to" /></span> <span className="md:whitespace-nowrap"><AnimatedText text="Pune's" /></span> <span className="text-gold md:whitespace-nowrap"><AnimatedText text="Leading Developers" /></span>
         </h2>
         <p className="line text-gray-500 font-light max-w-2xl mx-auto">
           Access to 100+ Premium Projects Across Pune Through Our Extensive Developer Network

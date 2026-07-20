@@ -64,7 +64,7 @@ export default function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={containerRef}>
         
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-6xl md:text-7xl text-white mb-4 md:mb-6">
+          <h2 className="font-serif text-6xl md:text-7xl text-white mb-4 md:mb-6 leading-[0.9] md:leading-tight">
             <AnimatedText text="Frequently Asked" /> <span className="text-gold"><AnimatedText text="Questions" /></span>
           </h2>
           <p className="text-sm md:text-base text-white font-light tracking-wide max-w-2xl mx-auto">

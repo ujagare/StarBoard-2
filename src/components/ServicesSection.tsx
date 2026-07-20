@@ -55,7 +55,7 @@ export default function ServicesSection() {
           </div>
 
           <div className="space-y-8 order-1 lg:order-2">
-            <h2 className="font-serif text-6xl md:text-7xl leading-tight">
+            <h2 className="font-serif text-6xl md:text-7xl leading-[0.9] md:leading-tight">
               <AnimatedText text="Premium" /> <span className="text-gold"><AnimatedText text="Services" /></span>
             </h2>
             <p className="line text-lg font-light leading-relaxed text-gray-300">
