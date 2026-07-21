@@ -115,7 +115,7 @@ export default function AchievementsSection() {
             >
               <dt 
                 ref={(el) => { numbersRef.current[index] = el; }}
-                className="font-serif text-6xl md:text-7xl lg:text-8xl text-gold mb-3 md:mb-4 leading-[0.8]"
+                className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-gold mb-3 md:mb-4 leading-tight"
               >
                 {stat.prefix}{animatedValues[index]}{stat.suffix}
               </dt>

@@ -34,7 +34,7 @@ export default function Navbar() {
               : "bg-black/40 backdrop-blur-sm text-white border-white/10 shadow-md"
         }`}
       >
-        <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center h-[100px]">
+        <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center h-16 sm:h-20 md:h-24">
 
           {/* Left: Logo with Text */}
           <div className="flex items-center -ml-2">
@@ -46,7 +46,7 @@ export default function Navbar() {
                 height={160}
                 priority
                 loading="eager"
-                className={`h-20 md:h-24 w-auto object-contain transition-all duration-500 ${
+                className={`h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-all duration-500 ${
                   scrolled && !menuOpen ? 'scale-90' : 'scale-100'
                 }`}
               />
@@ -55,10 +55,10 @@ export default function Navbar() {
               <div className={`h-12 md:h-14 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
             </div>
             <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5 z-50">
-              <span className={`text-xl md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
+              <span className={`text-base sm:text-lg md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 STARBOARD
               </span>
-              <span className={`text-lg md:text-xl lg:text-2xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
+              <span className={`text-sm sm:text-base md:text-xl lg:text-2xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
                 REALTORS
               </span>
             </div>

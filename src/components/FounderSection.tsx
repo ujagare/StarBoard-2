@@ -58,7 +58,7 @@ export default function FounderSection() {
           <div ref={containerRef} className="relative z-10 py-2 px-2 md:px-10">
             <blockquote 
               className="text-center font-serif w-full" 
-              style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', lineHeight: 1.4, color: 'rgba(255,255,255,0.1)' }}
+              style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', lineHeight: 1.2, color: 'rgba(255,255,255,0.1)' }}
             >
               {words.map((word, i) => (
                 <span key={i} className="founder-word inline-block mr-[0.25em]">

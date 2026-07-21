@@ -10,7 +10,7 @@ export default function Footer() {
 
           <div className="space-y-6">
             {/* Logo with Text - Same as Navbar */}
-            <div className="flex items-center">
+            <div className="flex items-center justify-start">
               <Image
                 src="/images/SR_Blue BG_logo.jpg (1).png"
                 alt="Starboard Realtors Logo"
