@@ -38,8 +38,8 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div className="space-y-8">
-            <h2 className="font-serif text-6xl md:text-7xl text-deepblue leading-[0.9] md:leading-tight">
-              <AnimatedText text="About" /> <span className="text-gold"><AnimatedText text="Starboard Realtors" /></span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl text-deepblue leading-tight tracking-normal">
+              <AnimatedText text="About" /> <span className="text-gold"><parameter name="text">Starboard Realtors" /></span>
             </h2>
             <div className="space-y-4 text-lg text-gray-600 font-light leading-relaxed">
               <p className="line">

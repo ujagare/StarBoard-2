@@ -96,7 +96,7 @@ export default function AchievementsSection() {
           <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">Key Achievements</span>
           <div className="w-12 h-px bg-gold/50"></div>
           </div>
-          <h2 className="font-serif text-6xl md:text-7xl text-white leading-[0.9] md:leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl text-white leading-tight tracking-normal">
             <span className="md:whitespace-nowrap"><AnimatedText text="A Track Record," /></span>{" "}
             <span className="text-gold md:whitespace-nowrap"><AnimatedText text="Measured In Trust." /></span>
           </h2>

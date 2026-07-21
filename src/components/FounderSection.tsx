@@ -43,7 +43,7 @@ export default function FounderSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <header className="mb-8 flex flex-col items-center">
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold mb-4 uppercase tracking-[0.1em] sm:tracking-[0.2em] text-center leading-[0.9] md:leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl lg:text-8xl text-gold mb-4 uppercase tracking-normal text-center leading-tight">
             <span className="md:whitespace-nowrap"><AnimatedText text="A Word From" /></span> <span className="md:whitespace-nowrap"><AnimatedText text="The Founder" /></span>
           </h2>
           <div className="w-24 h-px bg-gold/50 mx-auto"></div>
@@ -58,7 +58,7 @@ export default function FounderSection() {
           <div ref={containerRef} className="relative z-10 py-2 px-2 md:px-10">
             <blockquote 
               className="text-center font-serif w-full" 
-              style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.1)' }}
+              style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', lineHeight: 1.4, color: 'rgba(255,255,255,0.1)' }}
             >
               {words.map((word, i) => (
                 <span key={i} className="founder-word inline-block mr-[0.25em]">
