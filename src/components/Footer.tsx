@@ -9,26 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           <div className="space-y-6">
-            {/* Logo with Text - Same as Navbar */}
             <div className="flex items-center justify-start">
               <Image
-                src="/images/SR_Blue BG_logo.jpg (1).png"
+                src="/images/SR_White Typo with golden Star_horizontal_logo.png"
                 alt="Starboard Realtors Logo"
-                width={160}
-                height={160}
-                className="h-20 md:h-24 w-auto object-contain"
+                width={280}
+                height={80}
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               />
-              <div className="-ml-3 flex items-center" style={{ transform: 'translateX(-5px)' }}>
-                <div className="h-12 md:h-14 w-px bg-gold/60"></div>
-              </div>
-              <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5">
-                <span className="text-xl md:text-2xl lg:text-3xl tracking-wide leading-none text-white" style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
-                  STARBOARD
-                </span>
-                <span className="text-lg md:text-xl lg:text-2xl tracking-wide leading-none text-white" style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
-                  REALTORS
-                </span>
-              </div>
             </div>
             <p className="text-gray-400 font-light text-sm max-w-xs leading-relaxed">
               Curating exceptional spaces. A boutique real estate advisory firm specializing in commercial real estate, retail spaces, investment opportunities, and luxury residential properties across Pune.

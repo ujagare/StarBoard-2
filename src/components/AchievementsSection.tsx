@@ -93,7 +93,7 @@ export default function AchievementsSection() {
         <header className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-8">
           <div className="w-12 h-px bg-gold/50"></div>
-          <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">Key Achievements</span>
+          <span className="text-gold uppercase tracking-[0.08em] text-xs font-semibold">Key Achievements</span>
           <div className="w-12 h-px bg-gold/50"></div>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl text-white leading-tight tracking-normal">
@@ -119,7 +119,7 @@ export default function AchievementsSection() {
               >
                 {stat.prefix}{animatedValues[index]}{stat.suffix}
               </dt>
-              <dd className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] text-gray-300 uppercase whitespace-pre-line leading-relaxed">
+              <dd className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.08em] text-gray-300 uppercase whitespace-pre-line leading-relaxed">
                 {stat.label}
               </dd>
             </div>
@@ -128,7 +128,7 @@ export default function AchievementsSection() {
         </dl>
 
         {/* Bottom Tags */}
-        <ul className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[9px] sm:text-[11px] tracking-[0.2em] text-gray-400 uppercase">
+        <ul className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[9px] sm:text-[11px] tracking-[0.08em] text-gray-400 uppercase">
           <li>Exclusive Sales Mandates</li>
           <li aria-hidden="true" className="w-1 h-1 rounded-full bg-gold/50"></li>
           <li>Commercial Leasing Specialists</li>

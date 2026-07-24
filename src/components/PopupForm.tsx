@@ -7,6 +7,7 @@ import gsap from "gsap";
 export default function PopupForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [selectedRequirement, setSelectedRequirement] = useState("Commercial");
   
   const backdropRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLElement>(null);
@@ -65,7 +66,7 @@ export default function PopupForm() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
         ref={backdropRef}
@@ -79,24 +80,25 @@ export default function PopupForm() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="popup-form-title"
-        className="relative w-full max-w-lg bg-[#0F1C2D] border border-[#CFA85F]/30 rounded-xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-lg bg-[#0F1C2D] border border-[#CFA85F]/30 rounded-xl shadow-2xl overflow-hidden my-auto"
       >
         {/* Close Button */}
         <button 
           onClick={handleClose}
-          className="absolute top-4 right-4 text-white/50 hover:text-[#CFA85F] transition-colors duration-300 z-10"
+          className="absolute top-4 right-4 text-white/50 hover:text-[#CFA85F] transition-colors duration-300 z-10 p-1"
+          aria-label="Close form"
         >
           <X size={24} />
         </button>
 
         {/* Content */}
-        <div className="p-8 sm:p-10">
-          <header className="text-center mb-8">
-            <h3 id="popup-form-title" className="font-serif text-3xl md:text-4xl text-white mb-2">Register Interest</h3>
-            <p className="text-sm md:text-base text-gray-300">Experience premium living with Starboard Realtors.</p>
+        <div className="p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+          <header className="text-center mb-6">
+            <h3 id="popup-form-title" className="font-serif text-2xl sm:text-3xl md:text-4xl text-white mb-2">Register Interest</h3>
+            <p className="text-xs sm:text-sm text-gray-300">Experience premium real estate advisory with Starboard Realtors.</p>
           </header>
 
-          <form className="space-y-6 flex flex-col" onSubmit={(e) => {
+          <form className="space-y-5 flex flex-col" onSubmit={(e) => {
             e.preventDefault();
             const form = e.target as HTMLFormElement;
             const formData = new FormData(form);
@@ -108,69 +110,129 @@ export default function PopupForm() {
             form.reset();
             handleClose();
           }}>
-            <fieldset className="space-y-6">
+            <fieldset className="space-y-5">
               <legend className="sr-only">Register your interest</legend>
-            <div className="relative group">
-              <input 
-                type="text"
-                required
-                autoComplete="name"
-                className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
-                placeholder="Name"
-                id="popup-name"
-              />
-              <label 
-                htmlFor="popup-name" 
-                className="absolute left-1 top-3 text-gray-400 text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
-              >
-                Full Name
-              </label>
-              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
-            </div>
+              
+              {/* Full Name */}
+              <div className="relative group">
+                <input 
+                  type="text"
+                  name="name"
+                  required
+                  autoComplete="name"
+                  className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-2.5 px-1 text-white placeholder-transparent peer transition-colors duration-300 text-sm"
+                  placeholder="Name"
+                  id="popup-name"
+                />
+                <label 
+                  htmlFor="popup-name" 
+                  className="absolute left-1 top-2.5 text-gray-400 text-xs sm:text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
+                >
+                  Full Name*
+                </label>
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              </div>
 
-            <div className="relative group">
-              <input 
-                type="tel"
-                required
-                autoComplete="tel-national"
-                className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
-                placeholder="Phone"
-                id="popup-phone"
-              />
-              <label 
-                htmlFor="popup-phone" 
-                className="absolute left-1 top-3 text-gray-400 text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
-              >
-                Phone Number
-              </label>
-              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
-            </div>
+              {/* Phone Number */}
+              <div className="relative group">
+                <input 
+                  type="tel"
+                  name="phone"
+                  required
+                  autoComplete="tel-national"
+                  className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-2.5 px-1 text-white placeholder-transparent peer transition-colors duration-300 text-sm"
+                  placeholder="Phone"
+                  id="popup-phone"
+                />
+                <label 
+                  htmlFor="popup-phone" 
+                  className="absolute left-1 top-2.5 text-gray-400 text-xs sm:text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
+                >
+                  Phone Number*
+                </label>
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              </div>
 
-            <div className="relative group">
-              <input 
-                type="email"
-                required
-                autoComplete="email"
-                className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-3 px-1 text-white placeholder-transparent peer transition-colors duration-300"
-                placeholder="Email"
-                id="popup-email"
-              />
-              <label 
-                htmlFor="popup-email" 
-                className="absolute left-1 top-3 text-gray-400 text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
-              >
-                Email Address
-              </label>
-              <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
-            </div>
+              {/* Email Address */}
+              <div className="relative group">
+                <input 
+                  type="email"
+                  name="email"
+                  required
+                  autoComplete="email"
+                  className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-2.5 px-1 text-white placeholder-transparent peer transition-colors duration-300 text-sm"
+                  placeholder="Email"
+                  id="popup-email"
+                />
+                <label 
+                  htmlFor="popup-email" 
+                  className="absolute left-1 top-2.5 text-gray-400 text-xs sm:text-sm transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#CFA85F] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#CFA85F]"
+                >
+                  Email Address*
+                </label>
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              </div>
 
-            <button 
-              type="submit" 
-              className="mt-4 relative overflow-hidden group border border-[#CFA85F] text-[#CFA85F] hover:text-[#0F1C2D] py-4 px-8 w-full uppercase tracking-[0.2em] text-sm font-semibold transition-colors duration-500"
-            >
-              <span className="relative z-10">Submit Inquiry</span>
-              <div className="absolute inset-0 bg-[#CFA85F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-            </button>
+              {/* Requirement / Property Type Selection */}
+              <div className="space-y-2 pt-1">
+                <label className="text-xs text-[#CFA85F] uppercase tracking-wider font-semibold block">
+                  Requirement Type*
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {["Commercial", "Residential", "Retail", "Advisory"].map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setSelectedRequirement(type)}
+                      className={`py-2 px-2 text-xs font-medium rounded transition-all duration-300 border text-center ${
+                        selectedRequirement === type
+                          ? "bg-[#CFA85F] text-[#0F1C2D] border-[#CFA85F] font-semibold shadow-md"
+                          : "bg-transparent text-gray-300 border-gray-700 hover:border-[#CFA85F] hover:text-white"
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" name="requirement" value={selectedRequirement} />
+              </div>
+
+              {/* Select Preferred Location */}
+              <div className="relative group pt-1">
+                <select 
+                  name="location"
+                  required
+                  defaultValue=""
+                  className="w-full bg-transparent border-b border-gray-600 focus:border-[#CFA85F] outline-none py-2.5 px-1 text-white text-sm cursor-pointer appearance-none transition-colors duration-300 [&>option]:bg-[#0F1C2D] [&>option]:text-white"
+                  id="popup-location"
+                >
+                  <option value="" disabled>Select Preferred Location*</option>
+                  <option value="Baner">Baner</option>
+                  <option value="Balewadi">Balewadi</option>
+                  <option value="Koregaon Park">Koregaon Park</option>
+                  <option value="Kalyani Nagar">Kalyani Nagar</option>
+                  <option value="Kharadi">Kharadi</option>
+                  <option value="Viman Nagar">Viman Nagar</option>
+                  <option value="Aundh">Aundh</option>
+                  <option value="Senapati Bapat Road">Senapati Bapat Road</option>
+                  <option value="Shivajinagar">Shivajinagar</option>
+                  <option value="Magarpatta">Magarpatta</option>
+                  <option value="Other Locations">Other Pune Locations</option>
+                </select>
+                <div className="absolute right-2 top-3 pointer-events-none text-gray-400 text-xs">
+                  ▼
+                </div>
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#CFA85F] transition-all duration-500 peer-focus:w-full" />
+              </div>
+
+              {/* Submit Button */}
+              <button 
+                type="submit" 
+                className="mt-4 relative overflow-hidden group border border-[#CFA85F] text-[#CFA85F] hover:text-[#0F1C2D] py-3.5 px-8 w-full uppercase tracking-[0.08em] text-sm font-semibold transition-colors duration-500 rounded-sm"
+              >
+                <span className="relative z-10">Submit Inquiry</span>
+                <div className="absolute inset-0 bg-[#CFA85F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+              </button>
             </fieldset>
           </form>
         </div>

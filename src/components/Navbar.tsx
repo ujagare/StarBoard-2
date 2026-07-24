@@ -36,32 +36,21 @@ export default function Navbar() {
       >
         <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center h-16 sm:h-20 md:h-24">
 
-          {/* Left: Logo with Text */}
-          <div className="flex items-center -ml-2">
+          {/* Left: Logo */}
+          <div className="flex items-center">
             <Link href="/" className="flex items-center group z-50">
               <Image
-                src="/images/SR_Blue BG_logo.jpg (1).png"
+                src="/images/SR_White Typo with golden Star_horizontal_logo.png"
                 alt="Starboard Realtors Logo"
-                width={160}
-                height={160}
+                width={280}
+                height={80}
                 priority
                 loading="eager"
-                className={`h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-all duration-500 ${
-                  scrolled && !menuOpen ? 'scale-90' : 'scale-100'
+                className={`h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-all duration-500 ${
+                  scrolled && !menuOpen ? 'scale-95' : 'scale-100'
                 }`}
               />
             </Link>
-            <div className="-ml-3 flex items-center" style={{ transform: 'translateX(-5px)' }}>
-              <div className={`h-12 md:h-14 w-px transition-colors duration-500 ${menuOpen ? 'bg-gold/40' : 'bg-gold/60'}`}></div>
-            </div>
-            <div className="flex flex-col justify-center space-y-0.5 md:space-y-0 md:-space-y-1 lg:-space-y-1.5 z-50">
-              <span className={`text-base sm:text-lg md:text-2xl lg:text-3xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
-                STARBOARD
-              </span>
-              <span className={`text-sm sm:text-base md:text-xl lg:text-2xl tracking-wide leading-none transition-colors duration-500 ${menuOpen ? 'text-white' : 'text-white'}`} style={{ fontFamily: "'Microsoft Himalaya', serif" }}>
-                REALTORS
-              </span>
-            </div>
           </div>
 
           {/* Right: WhatsApp Icon & Hamburger Menu */}
@@ -119,7 +108,7 @@ export default function Navbar() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.05)_0%,transparent_70%)] pointer-events-none" />
 
         <nav aria-label="Expanded navigation" className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pt-12 md:pt-0">
-        <ul className="flex flex-col items-start space-y-4 sm:space-y-6 md:space-y-8">
+        <ul className="flex flex-col items-start space-y-3 sm:space-y-4 md:space-y-5">
           {[
             { name: "Home", href: "/" },
             { name: "About Us", href: "#about" },
@@ -132,7 +121,7 @@ export default function Navbar() {
               <a
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-gold transition-all duration-500 uppercase tracking-[0.1em] relative group ${
+                className={`flex items-center font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl text-white hover:text-gold transition-all duration-500 uppercase tracking-[0.08em] relative group ${
                   menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                 }`}
                 style={{ transitionDelay: `${menuOpen ? 300 + (i * 100) : 0}ms` }}

@@ -41,11 +41,6 @@ export default function MapSection() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className="sm:w-[14px] sm:h-[14px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </div>
                 
-                <div className="text-[#0F1C2D] mb-3 sm:mb-4 pr-4">
-                  <span className="block text-2xl sm:text-3xl tracking-wide leading-none" style={{ fontFamily: "'Microsoft Himalaya', serif" }}>STARBOARD</span>
-                  <span className="block text-xl sm:text-2xl tracking-wide leading-none" style={{ fontFamily: "'Microsoft Himalaya', serif" }}>REALTORS</span>
-                </div>
-                
                 <p className="text-[10px] sm:text-xs text-[#0F1C2D]/80 font-light leading-relaxed mb-4 sm:mb-6">
                   201, Raichandani Galaxy,<br />
                   Beside Croma Store, Baner,<br />
@@ -57,7 +52,7 @@ export default function MapSection() {
                     href="https://maps.app.goo.gl/sSWefgKmva8Z8GBr9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 border border-[#CFA85F]/50 text-[#8C6D31] hover:text-[#0F1C2D] hover:border-[#0F1C2D] py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm bg-transparent"
+                    className="w-full flex items-center justify-center gap-2 border border-[#CFA85F]/50 text-[#8C6D31] hover:text-[#0F1C2D] hover:border-[#0F1C2D] py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.08em] transition-all rounded-sm bg-transparent"
                   >
                     Get Directions (Baner)
                     <MapPin size={12} strokeWidth={2} />
@@ -65,7 +60,7 @@ export default function MapSection() {
                   
                   <button 
                     onClick={() => setIsPopupOpen(false)}
-                    className="w-full flex items-center justify-center border border-[#CFA85F]/50 text-[#8C6D31] hover:text-[#0F1C2D] hover:border-[#0F1C2D] py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] transition-all rounded-sm bg-transparent"
+                    className="w-full flex items-center justify-center border border-[#CFA85F]/50 text-[#8C6D31] hover:text-[#0F1C2D] hover:border-[#0F1C2D] py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.08em] transition-all rounded-sm bg-transparent"
                   >
                     Close
                   </button>

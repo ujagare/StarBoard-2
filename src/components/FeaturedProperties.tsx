@@ -34,7 +34,7 @@ const properties = [
     name: "7 Modibaug",
     location: "Shivajinagar",
     details: "Exclusive 4 BHK Residences",
-    image: "/images/FEATURED OPPORTUNITIES/Suma Shilpa.webp",
+    image: "/images/FEATURED OPPORTUNITIES/modibaug.webp",
     pdf: "/images/PDF/7 Modibaug Brochure_03 Digital.pdf"
   },
   {
@@ -137,7 +137,7 @@ export default function FeaturedProperties() {
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                  </div>
                  <div className="border-l-2 border-gold pl-4">
-                   <p className="text-[10px] sm:text-xs text-gold uppercase tracking-[0.2em] font-semibold mb-1">
+                   <p className="text-[10px] sm:text-xs text-gold uppercase tracking-[0.08em] font-semibold mb-1">
                      {property.location}
                    </p>
                    <h3 className="font-serif text-2xl text-deepblue mb-1 group-hover:text-gold transition-colors">

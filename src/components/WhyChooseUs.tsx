@@ -89,7 +89,7 @@ export default function WhyChooseUs() {
         {/* Top Eyebrow Section */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <div className="w-12 h-px bg-gold/50"></div>
-          <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold whitespace-nowrap">Our Distinct Advantage</span>
+          <span className="text-gold uppercase tracking-[0.08em] text-xs font-semibold whitespace-nowrap">Our Distinct Advantage</span>
           <div className="w-12 h-px bg-gold/50"></div>
         </div>
 

@@ -6,15 +6,16 @@ import 'leaflet/dist/leaflet.css';
 
 export default function MapComponent() {
   const position: [number, number] = [18.5666, 73.8053];
-  const [mapKey, setMapKey] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMapKey((k) => k + 1);
+    setMounted(true);
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <MapContainer 
-      key={mapKey}
       center={position} 
       zoom={15} 
       scrollWheelZoom={false}

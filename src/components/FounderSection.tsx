@@ -70,8 +70,8 @@ export default function FounderSection() {
         
         <figcaption className="mt-10 flex flex-col items-center md:items-end md:pr-10">
           <div className="w-12 h-[2px] bg-gold mb-3"></div>
-          <cite className="font-serif text-2xl text-white not-italic">Mr. Sandesh Rolston</cite>
-          <p className="text-gold font-light tracking-widest uppercase text-xs mt-1">
+          <cite className="font-serif text-2xl md:text-3xl lg:text-4xl text-white not-italic">Mr. Sandesh Rolston</cite>
+          <p className="text-gold font-light tracking-widest uppercase text-xs md:text-sm lg:text-base mt-1">
             Founder & Director
           </p>
         </figcaption>
