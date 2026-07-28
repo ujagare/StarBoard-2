@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
 
         {/* Heading & Subtitle */}
         <div className="text-center mb-20">
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-6 leading-[0.85] tracking-normal">
+          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white mb-6 leading-[0.85] tracking-normal">
             <AnimatedText text="Why Choose" /> <span className="text-gold"><AnimatedText text="Starboard Realtors" /></span>
           </h2>
           <p className="text-gray-400 font-light tracking-wide max-w-2xl mx-auto text-lg leading-relaxed">

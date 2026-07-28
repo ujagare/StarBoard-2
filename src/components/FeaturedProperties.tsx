@@ -106,7 +106,7 @@ export default function FeaturedProperties() {
     <section id="properties" ref={sectionRef} className="py-24 bg-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl text-deepblue md:whitespace-nowrap leading-[0.85] tracking-normal">
+          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-deepblue md:whitespace-nowrap leading-[0.85] tracking-normal">
             <AnimatedText text="Featured" /> <span className="text-gold"><AnimatedText text="Properties" /></span>
           </h2>
         </div>

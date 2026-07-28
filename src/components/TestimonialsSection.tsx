@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-16 text-center">
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl text-deepblue mb-4 leading-[0.85] tracking-normal">
+          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-deepblue mb-4 leading-[0.85] tracking-normal">
             <AnimatedText text="Client" /> <span className="text-gold"><AnimatedText text="Experiences" /></span>
           </h2>
           <p className="line text-gray-500 font-light max-w-2xl mx-auto tracking-wide">
