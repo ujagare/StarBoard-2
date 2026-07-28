@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-16 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl text-deepblue mb-4 leading-tight tracking-normal">
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-deepblue mb-4 leading-tight tracking-normal">
             <AnimatedText text="Client" /> <span className="text-gold"><AnimatedText text="Experiences" /></span>
           </h2>
           <p className="line text-gray-500 font-light max-w-2xl mx-auto tracking-wide">
@@ -87,10 +87,10 @@ export default function TestimonialsSection() {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <article 
                 key={index}
-                className="testimonial-card flex flex-col shrink-0 w-60 sm:w-80 md:w-95 lg:w-100 h-[280px] sm:h-[310px] md:h-[340px] bg-offwhite p-5 sm:p-6 md:p-8 lg:p-10 rounded-sm shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border-2 border-gold/30 hover:border-gold hover:shadow-[0_20px_50px_-20px_rgba(197,160,60,0.3)] transition-all duration-500 relative group"
+                className="testimonial-card flex flex-col shrink-0 w-60 sm:w-80 md:w-95 lg:w-100 min-h-70 sm:min-h-77.5 md:min-h-85 bg-offwhite p-5 sm:p-6 md:p-8 lg:p-10 rounded-sm shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border-2 border-gold/30 hover:border-gold hover:shadow-[0_20px_50px_-20px_rgba(197,160,60,0.3)] transition-all duration-500 relative group"
               >
                 {/* Subtle Quote Mark inside card */}
-                <div className="absolute top-3 right-3 text-4xl sm:text-6xl md:text-7xl text-gold/10 font-serif leading-none group-hover:text-gold/20 transition-colors">
+                <div className="absolute top-3 right-3 text-4xl sm:text-6xl md:text-7xl text-gold/10 font-serif leading-none group-hover:text-gold/20 transition-colors pointer-events-none">
                   &rdquo;
                 </div>
                 
@@ -100,11 +100,11 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 
-                <blockquote className="text-xs sm:text-sm md:text-base text-gray-600 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 relative z-10 flex-1 overflow-hidden">
+                <blockquote className="text-xs sm:text-sm md:text-base text-gray-600 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 relative z-10 flex-1">
                   &quot;{testimonial.content}&quot;
                 </blockquote>
                 
-                <footer className="mt-auto border-t border-gray-100 pt-3 sm:pt-4 md:pt-5 flex flex-col">
+                <footer className="mt-auto border-t border-gray-100 pt-3 sm:pt-4 md:pt-5 flex flex-col shrink-0">
                   <p className="text-[10px] sm:text-xs md:text-sm text-gold uppercase tracking-widest font-medium mt-0.5 sm:mt-1 leading-tight line-clamp-2">
                     {testimonial.role}
                   </p>
