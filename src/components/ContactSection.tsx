@@ -54,7 +54,7 @@ export default function ContactSection() {
         
         {/* Left Side: Form */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-gold mb-8 uppercase tracking-normal leading-tight">
+          <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl text-gold mb-8 uppercase tracking-normal leading-[0.85]">
             <AnimatedText text="Get In Touch" />
           </h2>
 
