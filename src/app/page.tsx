@@ -13,6 +13,7 @@ import ContactSection from "@/components/ContactSection";
 import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 import ImageAnimator from "@/components/ImageAnimator";
+import Preloader from "@/components/Preloader";
 
 import PopupForm from "@/components/PopupForm";
 
@@ -137,22 +138,25 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Preloader />
       <PopupForm />
-      <ImageAnimator />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <FounderSection />
-      <ServicesSection />
-      <DeveloperPartners />
-      <WhyChooseUs />
-      <FeaturedProperties />
-      <AchievementsSection />
-      <TestimonialsSection />
-      <FaqSection />
-      <ContactSection />
-      <MapSection />
-      <Footer />
+      <div className="content">
+        <ImageAnimator />
+        <HeroSection />
+        <AboutSection />
+        <FounderSection />
+        <ServicesSection />
+        <DeveloperPartners />
+        <WhyChooseUs />
+        <FeaturedProperties />
+        <AchievementsSection />
+        <TestimonialsSection />
+        <FaqSection />
+        <ContactSection />
+        <MapSection />
+        <Footer />
+      </div>
     </main>
   );
 }

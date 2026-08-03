@@ -31,7 +31,7 @@ export default function HeroSection() {
       <div className="relative z-10 text-left text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
           <h1 
-            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 drop-shadow-lg uppercase tracking-normal leading-[0.8] sm:leading-[0.78] lg:leading-[0.75]"
+            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 drop-shadow-lg uppercase tracking-normal leading-[1.15] sm:leading-[0.78] lg:leading-[0.75]"
           >
             <AnimatedText text="Curating" />
             <br />

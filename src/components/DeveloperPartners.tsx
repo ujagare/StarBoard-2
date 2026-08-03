@@ -40,7 +40,7 @@ export default function DeveloperPartners() {
   return (
     <section className="py-20 bg-offwhite border-t border-b border-gray-200 overflow-hidden" aria-label="Developer partners">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-deepblue mb-4 leading-[0.85] tracking-normal">
+        <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-deepblue mb-4 leading-[1.15] sm:leading-[0.85] tracking-normal">
           <span className="md:whitespace-nowrap"><AnimatedText text="Trusted Access to" /></span> <span className="md:whitespace-nowrap"><AnimatedText text="Pune's" /></span> <span className="text-gold md:whitespace-nowrap"><AnimatedText text="Leading Developers" /></span>
         </h2>
         <p className="line text-gray-500 font-light max-w-2xl mx-auto">

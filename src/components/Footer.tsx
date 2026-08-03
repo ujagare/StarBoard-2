@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           <div className="space-y-6">
-            <div className="flex items-center justify-start">
+            <div className="flex items-center justify-start bg-[#F8F8F8] p-4 rounded-lg w-fit">
               <Image
-                src="/images/SR_White Typo with golden Star_horizontal_logo.png"
+                src="/SR_PNG horizontal_logo (1).png"
                 alt="Starboard Realtors Logo"
                 width={280}
                 height={80}

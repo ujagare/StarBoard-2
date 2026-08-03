@@ -26,12 +26,12 @@ export default function Navbar() {
       <nav
         suppressHydrationWarning
         aria-label="Primary navigation"
-        className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${
+        className={`fixed w-full z-[9001] transition-all duration-500 ease-in-out border-b ${
           menuOpen
-            ? "bg-transparent border-transparent text-white"
+            ? "bg-transparent border-transparent text-black"
             : scrolled
-              ? "bg-[#0F1C2D] backdrop-blur-lg shadow-xl text-white border-white/10"
-              : "bg-black/40 backdrop-blur-sm text-white border-white/10 shadow-md"
+              ? "bg-[#F8F8F8] backdrop-blur-lg shadow-xl text-black border-black/10"
+              : "bg-[#F8F8F8] backdrop-blur-sm text-black border-black/10 shadow-md"
         }`}
       >
         <div className="w-full px-3 sm:px-6 md:px-8 flex justify-between items-center h-16 sm:h-20 md:h-24">
@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center group z-50">
               <Image
-                src="/images/SR_White Typo with golden Star_horizontal_logo.png"
+                src="/SR_PNG horizontal_logo (1).png"
                 alt="Starboard Realtors Logo"
                 width={280}
                 height={80}
@@ -62,16 +62,16 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className={`hidden md:flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300 group ${
                 menuOpen
-                  ? 'border-white/30 hover:border-white hover:bg-white'
-                  : 'border-white/50 hover:bg-white'
+                  ? 'border-black/30 hover:border-black hover:bg-black'
+                  : 'border-black/50 hover:bg-black'
               }`}
               aria-label="WhatsApp"
             >
               <svg
                 className={`w-5 h-5 transition-colors duration-300 ${
                   menuOpen
-                    ? 'fill-white group-hover:fill-deepblue'
-                    : 'fill-white group-hover:fill-deepblue'
+                    ? 'fill-black group-hover:fill-white'
+                    : 'fill-black group-hover:fill-white'
                 }`}
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,10 +87,10 @@ export default function Navbar() {
               aria-label="Toggle Menu"
             >
               <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-white rotate-45' : 'bg-white translate-y-[-3px]'
+                menuOpen ? 'bg-black rotate-45' : 'bg-black translate-y-[-3px]'
               }`}></span>
               <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-white -rotate-45' : 'bg-white translate-y-[3px]'
+                menuOpen ? 'bg-black -rotate-45' : 'bg-black translate-y-[3px]'
               }`}></span>
             </button>
           </div>
@@ -100,58 +100,60 @@ export default function Navbar() {
 
       {/* Premium Full-Screen Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#0F1C2D] z-40 flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
-          menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        className={`fixed inset-0 bg-[#F8F8F8] z-[9000] flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+          menuOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
         {/* Background glow for luxury feel */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.05)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.08)_0%,transparent_70%)] pointer-events-none" />
 
         <nav aria-label="Expanded navigation" className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pt-12 md:pt-0">
-        <ul className="flex flex-col items-start space-y-3 sm:space-y-4 md:space-y-5">
-          {[
-            { name: "Home", href: "/" },
-            { name: "About Us", href: "#about" },
-            { name: "Premium Services", href: "#services" },
-            { name: "Featured Properties", href: "#properties" },
-            { name: "Testimonials", href: "#testimonials" },
-            { name: "Contact", href: "#contact" }
-          ].map((item, i) => (
-            <li key={i} className={`overflow-hidden w-full`}>
-              <a
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`flex items-center font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl text-white hover:text-gold transition-all duration-500 uppercase tracking-[0.08em] relative group ${
-                  menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-                }`}
-                style={{ transitionDelay: `${menuOpen ? 300 + (i * 100) : 0}ms` }}
-              >
-                <span className="w-0 h-[2px] bg-gold mr-0 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:mr-4 sm:group-hover:mr-6 ease-out"></span>
-                <span className="leading-tight">{item.name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="flex flex-col items-start space-y-4 sm:space-y-5 md:space-y-6">
+            {[
+              { name: "Home", href: "/" },
+              { name: "About Us", href: "#about" },
+              { name: "Premium Services", href: "#services" },
+              { name: "Featured Properties", href: "#properties" },
+              { name: "Testimonials", href: "#testimonials" },
+              { name: "Contact", href: "#contact" }
+            ].map((item, i) => (
+              <li key={i} className="w-full">
+                <a
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center font-serif text-2xl sm:text-3xl md:text-4xl text-black hover:text-gold transition-colors duration-300 uppercase tracking-[0.08em] relative group"
+                  style={{
+                    opacity: menuOpen ? 1 : 0,
+                    transform: menuOpen ? "translateY(0)" : "translateY(20px)",
+                    transition: `opacity 0.5s ease ${300 + i * 80}ms, transform 0.5s ease ${300 + i * 80}ms, color 0.3s ease`
+                  }}
+                >
+                  <span className="w-0 h-[2px] bg-gold mr-0 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:mr-4 sm:group-hover:mr-6 ease-out flex-shrink-0"></span>
+                  <span className="leading-tight">{item.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
         {/* Social Media Icons Footer in Menu */}
         <div
-          className={`absolute bottom-8 md:bottom-12 left-0 w-full px-8 md:px-16 flex justify-center items-center border-t border-white/10 pt-6 transition-all duration-1000 ${
+          className={`absolute bottom-8 md:bottom-12 left-0 w-full px-8 md:px-16 flex justify-center items-center border-t border-black/10 pt-6 transition-all duration-1000 ${
             menuOpen ? 'opacity-100 translate-y-0 delay-700' : 'opacity-0 translate-y-10'
           }`}
         >
           <nav aria-label="Social links">
           <ul className="flex gap-4">
-            <li><a href="https://wa.me/message/DSNUILFNWD23N1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
+            <li><a href="https://wa.me/message/DSNUILFNWD23N1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="WhatsApp">
               <FaWhatsapp size={18} />
             </a></li>
-            <li><a href="https://www.linkedin.com/company/starboard-realtors/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
+            <li><a href="https://www.linkedin.com/company/starboard-realtors/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="LinkedIn">
               <FaLinkedinIn size={18} />
             </a></li>
-            <li><a href="https://www.instagram.com/starboardrealtors" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
+            <li><a href="https://www.instagram.com/starboardrealtors" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="Instagram">
               <FaInstagram size={18} />
             </a></li>
-            <li><a href="https://youtube.com/@starboardrealtors2646" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
+            <li><a href="https://youtube.com/@starboardrealtors2646" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gold hover:border-gold transition-all" aria-label="YouTube">
               <FaYoutube size={18} />
             </a></li>
           </ul>

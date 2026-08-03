@@ -66,11 +66,11 @@ export default function PopupForm() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[50000] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
       {/* Backdrop */}
       <div 
         ref={backdropRef}
-        className="absolute inset-0 bg-black/60 backdrop-blur-md"
+        className="fixed inset-0 bg-black/70 backdrop-blur-md"
         onClick={handleClose}
       />
       
@@ -80,21 +80,21 @@ export default function PopupForm() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="popup-form-title"
-        className="relative w-full max-w-lg bg-[#0F1C2D] border border-[#CFA85F]/30 rounded-xl shadow-2xl overflow-hidden my-auto"
+        className="relative w-full max-w-lg bg-[#0F1C2D] border border-[#CFA85F]/40 rounded-xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col z-10"
       >
         {/* Close Button */}
         <button 
           onClick={handleClose}
-          className="absolute top-4 right-4 text-white/50 hover:text-[#CFA85F] transition-colors duration-300 z-10 p-1"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white/60 hover:text-[#CFA85F] transition-colors duration-300 z-20 p-1"
           aria-label="Close form"
         >
-          <X size={24} />
+          <X size={22} />
         </button>
 
         {/* Content */}
-        <div className="p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
-          <header className="text-center mb-6">
-            <h3 id="popup-form-title" className="font-serif text-2xl sm:text-3xl md:text-4xl text-white mb-2">Register Interest</h3>
+        <div className="p-5 sm:p-7 overflow-y-auto max-h-full">
+          <header className="text-center mb-5">
+            <h3 id="popup-form-title" className="font-serif text-2xl sm:text-3xl text-white mb-1.5">Register Interest</h3>
             <p className="text-xs sm:text-sm text-gray-300">Experience premium real estate advisory with Starboard Realtors.</p>
           </header>
 
