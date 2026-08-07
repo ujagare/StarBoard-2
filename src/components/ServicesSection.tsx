@@ -51,7 +51,7 @@ export default function ServicesSection() {
               quality={82}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
-            />
+             />
           </div>
 
           <div className="space-y-8 order-1 lg:order-2">
@@ -65,7 +65,7 @@ export default function ServicesSection() {
             <ul className="pt-4 grid grid-cols-2 gap-4 md:gap-6">
               <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Commercial</h3>
-                <p className="text-gray-400 font-light text-sm">Leasing & Sales</p>
+                <p className="text-gray-400 font-light text-sm">-Sales & Leasing </p>
               </li>
               <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Residential</h3>
@@ -73,7 +73,7 @@ export default function ServicesSection() {
               </li>
               <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Retail</h3>
-                <p className="text-gray-400 font-light text-sm">Leasing</p>
+                <p className="text-gray-400 font-light text-sm">-Sales & Leasing </p>
               </li>
               <li className="border border-white/20 p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Advisory</h3>

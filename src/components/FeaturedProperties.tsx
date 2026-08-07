@@ -27,7 +27,7 @@ const properties = [
     name: "Malpani R-Ramanujan",
     location: "Main Baner Road",
     details: "Grade A Commercial | 18,000 Sq.Ft. Floor",
-    image: "/images/FEATURED OPPORTUNITIES/Malpani.jpg",
+    image: "/images/FEATURED OPPORTUNITIES/Malpani.webp",
     pdf: "/images/PDF/M-RAMANUJAN - Brochure.pdf"
   },
   {
@@ -132,8 +132,8 @@ export default function FeaturedProperties() {
                      fill
                      quality={82}
                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                     className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                   />
+                     className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+                    />
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                  </div>
                  <div className="border-l-2 border-gold pl-4">

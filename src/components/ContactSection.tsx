@@ -163,7 +163,7 @@ export default function ContactSection() {
             quality={82}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
-          />
+           />
         </div>
 
       </div>

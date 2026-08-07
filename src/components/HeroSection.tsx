@@ -22,7 +22,7 @@ export default function HeroSection() {
           sizes="100vw"
           priority
           loading="eager"
-        />
+         />
         {/* Dark Overlay for text readability */}
         <div className="absolute inset-0 bg-black/60" />
       </div>

@@ -9,14 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           <div className="space-y-6">
-            <div className="flex items-center justify-start bg-[#F8F8F8] p-4 rounded-lg w-fit">
+            <div className="flex items-center justify-start">
               <Image
-                src="/SR_PNG horizontal_logo (1).png"
+                src="/images/SR_White Typo with golden Star_horizontal_logo.png"
                 alt="Starboard Realtors Logo"
                 width={280}
                 height={80}
                 className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-              />
+               />
             </div>
             <p className="text-gray-400 font-light text-sm max-w-xs leading-relaxed">
               Curating exceptional spaces. A boutique real estate advisory firm specializing in commercial real estate, retail spaces, investment opportunities, and luxury residential properties across Pune.

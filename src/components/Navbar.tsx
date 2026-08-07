@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center group z-50">
               <Image
-                src="/SR_PNG horizontal_logo (1).png"
+                src="/SR_PNG horizontal_logo (1).webp"
                 alt="Starboard Realtors Logo"
                 width={280}
                 height={80}
@@ -49,7 +49,7 @@ export default function Navbar() {
                 className={`h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-all duration-500 ${
                   scrolled && !menuOpen ? 'scale-95' : 'scale-100'
                 }`}
-              />
+               />
             </Link>
           </div>
 

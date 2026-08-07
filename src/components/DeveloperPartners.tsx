@@ -59,7 +59,7 @@ export default function DeveloperPartners() {
                 fill
                 sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, 160px"
                 className="object-contain"
-              />
+               />
             </li>
           ))}
         </ul>

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    name: "Murali Nayak",
+    name: "Mr.Murali Nayak",
     role: "Sr. Vice President, Samvardhana Motherson International Ltd",
     content: "Sandesh Rolston is a true professional and an absolute gentleman. His ability to understand client requirements and preferences is exceptional. He is punctual, courteous, flexible, and thoroughly prepared before every interaction. It was a pleasure working with him throughout the entire property search journey.",
   },
@@ -20,18 +20,18 @@ const testimonials = [
     content: "Mr. Sandesh Rolston is a highly professional real estate consultant. He understood our requirements perfectly and shortlisted properties that aligned with our preferences. He values his clients' time, is always punctual, and made the entire experience smooth and enjoyable.",
   },
   {
-    name: "Geetha Garud",
+    name: "Ms.Geetha Garud",
     role: "Associate Director – Pre-Sales, LTIMindtree",
     content: "Sandesh Rolston and his team were instrumental in assisting with the sale of my property. Their transparency, professionalism, and commitment to ethical business practices made the entire process seamless and stress-free.",
   },
   {
-    name: "Sushrut Shah",
-    role: "Client",
+    name: "Dr.Sushrut Shah",
+    role: "Founder & Managing Director , Sawaai International Pvt. Ltd.",
     content: "It was a true joy to meet Mr. Sandesh. He showed us properties worth the investment and instantly grasped our needs. He is also a really kind and sincere advisor.",
   },
   {
-    name: "Malavika Nayak",
-    role: "Client",
+    name: "Ms.Malavika Nayak",
+    role: "Housewife",
     content: "Mr. Sandesh comes across as a very thorough professional in his field. Being punctual is the first quality which we appreciate. The other foremost thing which stands out is his understanding of the client's requirements and his choice of options met our requirements exactly what we wanted. We thank him for all his patience and support and we strongly recommend him for the service he provides.",
   },
   {
@@ -40,8 +40,8 @@ const testimonials = [
     content: "A very hard working official. Shri Sandesh is a thorough gentleman, patient and knowledgeable. We totally trusted him through out the whole procedure of selling our flat and he offered his best and more than our expectations. We wish him and this firm a great success ahead.",
   },
   {
-    name: "Chaitanya Krishna",
-    role: "Client",
+    name: "Mr.Chaitanya Krishna",
+    role: "Retired SBI Manager , Lead Quality Assurance at Hilti",
     content: "We had a great conversation with Mr. Sandesh. He is a serious businessman and a diligent worker. He assisted me in finding a home that fit my needs and price range. He is open and honest in their real estate transactions and a subject matter specialist! I sincerely suggest him and wish him much success!",
   }
 ];
@@ -105,10 +105,10 @@ export default function TestimonialsSection() {
                 </blockquote>
                 
                 <footer className="mt-auto border-t border-gray-100 pt-3 sm:pt-4 md:pt-5 flex flex-col shrink-0">
-                  <p className="text-[10px] sm:text-xs md:text-sm text-gold uppercase tracking-widest font-medium mt-0.5 sm:mt-1 leading-tight line-clamp-2">
+                  <h3 className="font-serif text-sm sm:text-base md:text-lg lg:text-xl text-deepblue mt-1 sm:mt-2">{testimonial.name}</h3>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-gold uppercase tracking-widest font-medium mt-1 sm:mt-1.5 leading-snug">
                     {testimonial.role}
                   </p>
-                  <h3 className="font-serif text-sm sm:text-base md:text-lg lg:text-xl text-deepblue whitespace-nowrap truncate mt-1 sm:mt-2">{testimonial.name}</h3>
                 </footer>
               </article>
             ))}

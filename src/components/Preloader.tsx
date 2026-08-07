@@ -74,25 +74,16 @@ export default function Preloader() {
       {/* Center Loader Content */}
       <div className="loader-center-content relative z-30 flex flex-col items-center justify-center p-6 text-center">
         
-        {/* Top Eyebrow Accent */}
-        <div className="flex items-center gap-3 mb-5">
-          <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#CFA85F]" />
-          <span className="text-[#CFA85F] uppercase tracking-[0.3em] text-[9px] sm:text-[11px] font-medium">
-            Starboard Realtors
-          </span>
-          <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#CFA85F]" />
-        </div>
-
         {/* Brand Logo */}
         <div className="relative w-60 sm:w-80 md:w-96 h-20 sm:h-28 mb-4">
           <Image
-            src="/SR_PNG horizontal_logo (1).png"
+            src="/SR_PNG horizontal_logo (1).webp"
             alt="Starboard Realtors Luxury Real Estate"
             fill
             sizes="(max-width: 640px) 240px, (max-width: 768px) 320px, 384px"
             className="object-contain"
             priority
-          />
+           />
         </div>
 
         {/* Dynamic Expanding Gold Progress Line */}
