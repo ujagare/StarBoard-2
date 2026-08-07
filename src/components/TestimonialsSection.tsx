@@ -30,18 +30,18 @@ const testimonials = [
     content: "It was a true joy to meet Mr. Sandesh. He showed us properties worth the investment and instantly grasped our needs. He is also a really kind and sincere advisor.",
   },
   {
-    name: "Ms.Malavika Nayak",
+    name: "Mrs.Malavika Nayak",
     role: "Housewife",
     content: "Mr. Sandesh comes across as a very thorough professional in his field. Being punctual is the first quality which we appreciate. The other foremost thing which stands out is his understanding of the client's requirements and his choice of options met our requirements exactly what we wanted. We thank him for all his patience and support and we strongly recommend him for the service he provides.",
   },
   {
     name: "Mr. Mujumdar Avinash",
-    role: "Client",
+    role: "Retired SBI Manager",
     content: "A very hard working official. Shri Sandesh is a thorough gentleman, patient and knowledgeable. We totally trusted him through out the whole procedure of selling our flat and he offered his best and more than our expectations. We wish him and this firm a great success ahead.",
   },
   {
     name: "Mr.Chaitanya Krishna",
-    role: "Retired SBI Manager , Lead Quality Assurance at Hilti",
+    role: " Lead Quality Assurance at Hilti",
     content: "We had a great conversation with Mr. Sandesh. He is a serious businessman and a diligent worker. He assisted me in finding a home that fit my needs and price range. He is open and honest in their real estate transactions and a subject matter specialist! I sincerely suggest him and wish him much success!",
   }
 ];
