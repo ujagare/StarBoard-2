@@ -63,21 +63,21 @@ export default function ServicesSection() {
             </p>
             
             <ul className="pt-4 grid grid-cols-2 gap-4 md:gap-6">
-              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
-                <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Commercial</h3>
-                <p className="text-gray-400 font-light text-sm">-Sales & Leasing </p>
+              <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
+                <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Commercial</h3>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">-Sales & Leasing </p>
               </li>
-              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
-                <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Residential</h3>
-                <p className="text-gray-400 font-light text-sm">Luxury Sales</p>
+              <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
+                <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Residential</h3>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">Luxury Sales</p>
               </li>
-              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
-                <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Retail</h3>
-                <p className="text-gray-400 font-light text-sm">-Sales & Leasing </p>
+              <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
+                <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Retail</h3>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">-Sales & Leasing </p>
               </li>
-              <li className="border border-white/20 p-6 hover:border-gold transition-colors">
-                <h3 className="text-gold font-serif text-2xl sm:text-3xl mb-2">Advisory</h3>
-                <p className="text-gray-400 font-light text-sm">Investment & Consulting</p>
+              <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
+                <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Advisory</h3>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">Investment & Consulting</p>
               </li>
             </ul>
 
