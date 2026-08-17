@@ -65,7 +65,7 @@ export default function ServicesSection() {
             <ul className="pt-4 grid grid-cols-2 gap-4 md:gap-6">
               <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Commercial</h3>
-                <p className="text-gray-400 font-light text-xs sm:text-sm">-Sales & Leasing </p>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">Sales & Leasing </p>
               </li>
               <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Residential</h3>
@@ -73,7 +73,7 @@ export default function ServicesSection() {
               </li>
               <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Retail</h3>
-                <p className="text-gray-400 font-light text-xs sm:text-sm">-Sales & Leasing </p>
+                <p className="text-gray-400 font-light text-xs sm:text-sm">Sales & Leasing </p>
               </li>
               <li className="border border-white/20 p-4 sm:p-6 hover:border-gold transition-colors">
                 <h3 className="text-gold font-serif text-xl sm:text-2xl md:text-3xl mb-2">Advisory</h3>

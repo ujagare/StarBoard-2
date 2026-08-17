@@ -37,7 +37,7 @@ export default function FounderSection() {
     <section id="founder" className="relative py-12 bg-deepblue text-white overflow-hidden">
       {/* Subtle Background Pattern/Overlay */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-gold via-transparent to-transparent"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +69,7 @@ export default function FounderSection() {
           </div>
         
         <figcaption className="mt-10 flex flex-col items-center md:items-end md:pr-10">
-          <div className="w-12 h-[2px] bg-gold mb-3"></div>
+          <div className="w-12 h-0.5 bg-gold mb-3"></div>
           <cite className="font-serif text-2xl md:text-3xl lg:text-4xl text-white not-italic">Mr. Sandesh Rolston</cite>
           <p className="text-gold font-light tracking-widest uppercase text-xs md:text-sm lg:text-base mt-1">
             Founder & Director

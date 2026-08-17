@@ -8,6 +8,11 @@ export default function PopupForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [selectedRequirement, setSelectedRequirement] = useState("Commercial");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
   
   const backdropRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLElement>(null);
@@ -66,7 +71,7 @@ export default function PopupForm() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-999999 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
       {/* Backdrop */}
       <div 
         ref={backdropRef}
@@ -98,17 +103,58 @@ export default function PopupForm() {
             <p className="text-xs sm:text-sm text-gray-300">Experience premium real estate advisory with Starboard Realtors.</p>
           </header>
 
-          <form className="space-y-5 flex flex-col" onSubmit={(e) => {
+          <form className="space-y-5 flex flex-col" onSubmit={async (e) => {
             e.preventDefault();
             const form = e.target as HTMLFormElement;
+            if (isSubmitting) return;
+
             const formData = new FormData(form);
-            fetch("https://formsubmit.co/ajax/connect@starboardrealtors.co.in", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(Object.fromEntries(formData.entries())),
-            }).catch(() => {});
-            form.reset();
-            handleClose();
+
+            const data = {
+              formType: 'popup',
+              name: formData.get('name'),
+              phone: formData.get('phone'),
+              email: formData.get('email'),
+              requirement: formData.get('requirement'),
+              location: formData.get('location'),
+            };
+
+            try {
+              setIsSubmitting(true);
+              setSubmitStatus(null);
+
+              const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+              });
+
+              const result = await response.json().catch(() => ({}));
+
+              if (response.ok) {
+                form.reset();
+                setSubmitStatus({
+                  type: "success",
+                  message: "Thank you. We will contact you soon.",
+                });
+                window.setTimeout(handleClose, 900);
+              } else {
+                throw new Error(result.error || 'Failed to send email');
+              }
+            } catch (error) {
+              // Log error in production monitoring service if configured
+              if (process.env.NODE_ENV === 'development') {
+                console.error('Error:', error);
+              }
+              setSubmitStatus({
+                type: "error",
+                message: error instanceof Error
+                  ? error.message
+                  : "Sorry, there was an error. Please try again.",
+              });
+            } finally {
+              setIsSubmitting(false);
+            }
           }}>
             <fieldset className="space-y-5">
               <legend className="sr-only">Register your interest</legend>
@@ -228,11 +274,22 @@ export default function PopupForm() {
               {/* Submit Button */}
               <button 
                 type="submit" 
-                className="mt-4 relative overflow-hidden group border border-[#CFA85F] text-[#CFA85F] hover:text-[#0F1C2D] py-3.5 px-8 w-full uppercase tracking-[0.08em] text-sm font-semibold transition-colors duration-500 rounded-sm"
+                disabled={isSubmitting}
+                className="mt-4 relative overflow-hidden group border border-[#CFA85F] text-[#CFA85F] hover:text-[#0F1C2D] py-3.5 px-8 w-full uppercase tracking-[0.08em] text-sm font-semibold transition-colors duration-500 rounded-sm disabled:cursor-not-allowed disabled:opacity-60"
               >
-                <span className="relative z-10">Submit Inquiry</span>
+                <span className="relative z-10">{isSubmitting ? "Submitting..." : "Submit Inquiry"}</span>
                 <div className="absolute inset-0 bg-[#CFA85F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
               </button>
+              {submitStatus && (
+                <p
+                  role="status"
+                  className={`text-xs leading-relaxed ${
+                    submitStatus.type === "success" ? "text-[#CFA85F]" : "text-red-300"
+                  }`}
+                >
+                  {submitStatus.message}
+                </p>
+              )}
             </fieldset>
           </form>
         </div>

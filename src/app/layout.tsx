@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleTagManager, { GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -36,6 +38,9 @@ export const metadata: Metadata = {
   publisher: "Starboard Realtors",
   alternates: {
     canonical: siteUrl,
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
   openGraph: {
     type: "website",
@@ -84,7 +89,13 @@ export const metadata: Metadata = {
       { url: '/images/Favicon/android-chrome-512x512.webp', sizes: '512x512', type: 'image/webp' },
     ],
   },
-  manifest: '/images/Favicon/site.webmanifest',
+  manifest: '/site.webmanifest',
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0F1C2D",
 };
 
 export default function RootLayout({
@@ -99,6 +110,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden font-sans" suppressHydrationWarning>
+        <GoogleTagManager />
+        <GoogleTagManagerNoScript />
+        <GoogleAnalytics />
         <SmoothScroll />
         {children}
       </body>

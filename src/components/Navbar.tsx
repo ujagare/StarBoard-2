@@ -26,7 +26,7 @@ export default function Navbar() {
       <nav
         suppressHydrationWarning
         aria-label="Primary navigation"
-        className={`fixed w-full z-[9001] transition-all duration-500 ease-in-out border-b ${
+        className={`fixed w-full z-9001 transition-all duration-500 ease-in-out border-b ${
           menuOpen
             ? "bg-transparent border-transparent text-black"
             : scrolled
@@ -86,11 +86,11 @@ export default function Navbar() {
               className="flex flex-col justify-center items-center w-12 h-12 hover:opacity-70 transition-opacity z-50 relative shrink-0"
               aria-label="Toggle Menu"
             >
-              <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-black rotate-45' : 'bg-black translate-y-[-3px]'
+              <span className={`w-8 h-0.5 absolute transition-all duration-300 ${
+                menuOpen ? 'bg-black rotate-45' : 'bg-black -translate-y-0.75'
               }`}></span>
-              <span className={`w-8 h-[2px] absolute transition-all duration-300 ${
-                menuOpen ? 'bg-black -rotate-45' : 'bg-black translate-y-[3px]'
+              <span className={`w-8 h-0.5 absolute transition-all duration-300 ${
+                menuOpen ? 'bg-black -rotate-45' : 'bg-black translate-y-0.75'
               }`}></span>
             </button>
           </div>
@@ -100,12 +100,12 @@ export default function Navbar() {
 
       {/* Premium Full-Screen Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#F8F8F8] z-[9000] flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`fixed inset-0 bg-[#F8F8F8] z-9000 flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           menuOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
         {/* Background glow for luxury feel */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.08)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-[radial-gradient(circle_at_center,rgba(207,168,95,0.08)_0%,transparent_70%)] pointer-events-none" />
 
         <nav aria-label="Expanded navigation" className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pt-12 md:pt-0">
           <ul className="flex flex-col items-start space-y-4 sm:space-y-5 md:space-y-6">
@@ -128,7 +128,7 @@ export default function Navbar() {
                     transition: `opacity 0.5s ease ${300 + i * 80}ms, transform 0.5s ease ${300 + i * 80}ms, color 0.3s ease`
                   }}
                 >
-                  <span className="w-0 h-[2px] bg-gold mr-0 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:mr-4 sm:group-hover:mr-6 ease-out flex-shrink-0"></span>
+                  <span className="w-0 h-0.5 bg-gold mr-0 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:mr-4 sm:group-hover:mr-6 ease-out shrink-0"></span>
                   <span className="leading-tight">{item.name}</span>
                 </a>
               </li>

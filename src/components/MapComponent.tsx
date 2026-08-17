@@ -1,18 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 export default function MapComponent() {
   const position: [number, number] = [18.5666, 73.8053];
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <MapContainer 

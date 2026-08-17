@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -11,6 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   useEffect(() => {
     if (!imageRef.current) return;
@@ -32,19 +37,60 @@ export default function ContactSection() {
     });
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+    const firstName = String(formData.get('firstName') || '').trim();
+    const lastName = String(formData.get('lastName') || '').trim();
 
-    // Submit form data
-    fetch("https://formsubmit.co/ajax/connect@starboardrealtors.co.in", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(formData.entries())),
-    }).catch(() => {});
+    const data = {
+      formType: 'contact',
+      firstName,
+      lastName,
+      name: `${firstName} ${lastName}`.trim(),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      location: formData.get('location'),
+    };
 
-    form.reset();
+    try {
+      setIsSubmitting(true);
+      setSubmitStatus(null);
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        form.reset();
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you. Your inquiry has been submitted successfully.",
+        });
+      } else {
+        throw new Error(result.error || 'Failed to send email');
+      }
+    } catch (error) {
+      // Log error in production monitoring service if configured
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error:', error);
+      }
+      setSubmitStatus({
+        type: "error",
+        message: error instanceof Error
+          ? error.message
+          : "Sorry, there was an error submitting your inquiry. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,6 +112,7 @@ export default function ContactSection() {
               <div className="w-full relative group">
                 <input 
                   type="text"
+                  name="firstName"
                   placeholder="First Name*"
                   required
                   autoComplete="given-name"
@@ -76,6 +123,7 @@ export default function ContactSection() {
               <div className="w-full relative group">
                 <input 
                   type="text"
+                  name="lastName"
                   placeholder="Last Name*"
                   required
                   autoComplete="family-name"
@@ -93,6 +141,7 @@ export default function ContactSection() {
               </div>
               <input 
                 type="tel"
+                name="phone"
                 placeholder="Phone Number*"
                 required
                 autoComplete="tel-national"
@@ -105,6 +154,7 @@ export default function ContactSection() {
             <div className="relative group">
               <input 
                 type="email"
+                name="email"
                 placeholder="Email*"
                 required
                 autoComplete="email"
@@ -115,7 +165,7 @@ export default function ContactSection() {
 
             {/* Select City/Nationality */}
             <div className="relative group">
-              <select defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
+              <select name="location" defaultValue="" className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-gold transition-colors font-light text-gray-400 appearance-none cursor-pointer text-sm peer">
                 <option value="" disabled>Select Preferred Location*</option>
                 <option value="koregaon-park" className="text-gray-700">Koregaon Park</option>
                 <option value="kalyani-nagar" className="text-gray-700">Kalyani Nagar</option>
@@ -141,11 +191,22 @@ export default function ContactSection() {
             {/* Submit Button */}
             <button 
               type="submit"
-              className="group relative inline-flex items-center justify-center w-full mt-6 px-8 py-4 bg-transparent border border-gold text-gold font-semibold uppercase tracking-widest overflow-hidden transition-all duration-500 hover:text-white"
+              disabled={isSubmitting}
+              className="group relative inline-flex items-center justify-center w-full mt-6 px-8 py-4 bg-transparent border border-gold text-gold font-semibold uppercase tracking-widest overflow-hidden transition-all duration-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
             >
               <span className="absolute inset-0 w-0 bg-gold transition-all duration-500 ease-out group-hover:w-full"></span>
-              <span className="relative z-10">Submit Inquiry</span>
+              <span className="relative z-10">{isSubmitting ? "Submitting..." : "Submit Inquiry"}</span>
             </button>
+            {submitStatus && (
+              <p
+                role="status"
+                className={`text-xs leading-relaxed ${
+                  submitStatus.type === "success" ? "text-green-700" : "text-red-600"
+                }`}
+              >
+                {submitStatus.message}
+              </p>
+            )}
             </fieldset>
           </form>
         </div>

@@ -65,9 +65,9 @@ export default function Footer() {
           <address className="not-italic">
             <p className="font-serif text-xl mb-6 text-gold">Contact</p>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
-              <li>201, Raichandani Galaxy</li>
-              <li>Beside Croma Store, Baner</li>
-              <li>Pune – 411045</li>
+              <li>201, Raichandani Galaxy,</li>
+              <li>Beside Croma Store,</li>
+              <li>Pune, Maharashtra, India-411045</li>
               <li className="pt-2 text-white">Mobile: <a href="tel:+919769494723" className="hover:text-gold">+91 9769494723</a></li>
               <li className="text-white">Email: <a href="mailto:connect@starboardrealtors.co.in" className="hover:text-gold">connect@starboardrealtors.co.in</a></li>
               <li className="pt-2">Working Hours: 9:00 AM – 7:00 PM</li>
