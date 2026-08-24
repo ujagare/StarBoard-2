@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Dr. Kanchan Sawant",
     role: "Eye Specialist, Shree Ram Netralaya",
-    content: "Mr. Sandesh Rolston is a highly professional real estate consultant. He understood our requirements perfectly and shortlisted properties that aligned with our preferences. He values his clients' time, is always punctual, and made the entire experience smooth and enjoyable.",
+    content: "Sandesh Rolston is a highly professional real estate consultant. He understood our requirements perfectly and shortlisted properties that aligned with our preferences. He values his clients' time, is always punctual, and made the entire experience smooth and enjoyable.",
   },
   {
     name: "Ms.Geetha Garud",
