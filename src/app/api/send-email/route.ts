@@ -125,15 +125,26 @@ export async function POST(request: Request) {
       ? PopupFormEmailTemplate(formData)
       : ContactEmailTemplate(formData);
 
-    await resend.emails.send({
+    // Resend does not throw on API-level failures (invalid key, unverified
+    // domain, rate limit) — it resolves with an `error` field, so it must be
+    // checked or the response would falsely report success.
+    const { error } = await resend.emails.send({
       from: senderEmail,
       to: [recipientEmail],
       replyTo: formData.email,
-      subject: formType === 'popup' 
+      subject: formType === 'popup'
         ? `New Interest Registration - ${formData.requirement || 'General'}`
         : 'New Contact Form Submission',
       react: emailTemplate,
     });
+
+    if (error) {
+      console.error('Resend API error:', error);
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
