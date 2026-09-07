@@ -37,6 +37,11 @@ export default function MapSection() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className="sm:w-[14px] sm:h-[14px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </div>
                 
+                <p className="text-base sm:text-xl font-serif text-[#0F1C2D] tracking-[0.06em] leading-snug mb-1.5 sm:mb-2">
+                  Starboard Realtors
+                </p>
+                <div className="w-8 h-px bg-[#CFA85F] mb-3 sm:mb-4"></div>
+
                 <p className="text-[10px] sm:text-xs text-[#0F1C2D]/80 font-light leading-relaxed mb-4 sm:mb-6">
                   201, Raichandani Galaxy,<br />
                   Beside Croma Store, Baner,<br />
