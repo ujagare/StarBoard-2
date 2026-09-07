@@ -51,7 +51,7 @@ const jsonLd = {
         "https://www.instagram.com/starboardrealtors",
         "https://youtube.com/@starboardrealtors2646",
       ],
-      hasMap: "https://maps.app.goo.gl/sSWefgKmva8Z8GBr9",
+      hasMap: "https://maps.app.goo.gl/oPWjqKYwvzu1qgAJ7",
     },
     {
       "@type": "WebSite",
