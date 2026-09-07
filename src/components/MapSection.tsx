@@ -12,7 +12,6 @@ const DynamicMapComponent = dynamic(() => import('@/components/MapComponent'), {
   ),
   ssr: false,
 });
-
 export default function MapSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
 
