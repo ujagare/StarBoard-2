@@ -49,7 +49,7 @@ export default function MapSection() {
                 
                 <div className="flex flex-col gap-2 sm:gap-3">
                   <a
-                    href="https://maps.app.goo.gl/sSWefgKmva8Z8GBr9"
+                    href="https://maps.app.goo.gl/oPWjqKYwvzu1qgAJ7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 border border-[#CFA85F]/50 text-[#8C6D31] hover:text-[#0F1C2D] hover:border-[#0F1C2D] py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.08em] transition-all rounded-sm bg-transparent"
