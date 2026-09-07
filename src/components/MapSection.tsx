@@ -22,10 +22,7 @@ export default function MapSection() {
         
         {/* The Map itself */}
         <div className="w-full h-full rounded-md overflow-hidden relative shadow-2xl border-2 border-[#CFA85F]">
-          
-          {/* Deep Blue Tint Overlay */}
-          <div className="absolute inset-0 bg-[#0F1C2D] mix-blend-screen pointer-events-none z-[400]" />
-          
+
           <DynamicMapComponent />
           
           {/* Custom Overlay Popup - Guaranteed to show */}

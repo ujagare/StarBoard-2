@@ -9,7 +9,7 @@ const OFFICE_LATITUDE = 18.5666;
 export default function MapComponent() {
   return (
     <Map
-      theme="dark"
+      theme="light"
       center={[OFFICE_LONGITUDE, OFFICE_LATITUDE]}
       zoom={15}
       scrollZoom={false}
