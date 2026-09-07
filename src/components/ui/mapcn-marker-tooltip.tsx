@@ -131,6 +131,12 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   const [isStyleLoaded, setIsStyleLoaded] = useState(false);
   const styleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const internalUpdateRef = useRef(false);
+  // The theme effect below re-runs when mapInstance flips from null to the map.
+  // Calling setStyle with the same style that early aborts the initial style
+  // fetch, and maplibre's diff fails on the still-null style ("Cannot read
+  // properties of null (reading 'setState')"), so the map 'load' event never
+  // fires and the loader stays visible forever. Skip that first run.
+  const isFirstStyleRun = useRef(true);
   const resolvedTheme = useResolvedTheme(themeProp);
   const onViewportChangeRef = useRef(onViewportChange);
   onViewportChangeRef.current = onViewportChange;
@@ -172,10 +178,13 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     map.on("load", loadHandler);
     map.on("styledata", styleDataHandler);
     map.on("move", moveHandler);
+    // Safety net: never leave the blurred loader covering the map permanently.
+    const loaderSafetyTimer = setTimeout(() => setIsLoaded(true), 8000);
     setMapInstance(map);
 
     return () => {
       clearStyleTimeout();
+      clearTimeout(loaderSafetyTimer);
       map.off("load", loadHandler);
       map.off("styledata", styleDataHandler);
       map.off("move", moveHandler);
@@ -188,6 +197,10 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
   useEffect(() => {
     if (!mapInstance) return;
+    if (isFirstStyleRun.current) {
+      isFirstStyleRun.current = false;
+      return;
+    }
     const nextStyle = resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
     setIsStyleLoaded(false);
     mapInstance.setStyle(nextStyle);
